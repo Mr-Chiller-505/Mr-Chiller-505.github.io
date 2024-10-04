@@ -1,0 +1,1698 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+:root {
+  --mermaid-theme: night;
+}
+
+[lang='mermaid'] .label {
+  color: #333;
+}
+
+/* CSS Document */
+
+/** code highlight */
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-operator,
+.cm-s-inner .cm-property {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-keyword {
+    color: #C88FD0;
+}
+
+.cm-s-inner .cm-tag {
+    color: #f4df6a;
+}
+
+.cm-s-inner .cm-attribute {
+    color: #7575E4;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left: 1px solid #b8bfc6;
+    z-index: 3;
+}
+
+.cm-s-inner .cm-string {
+    color: #D26B6B;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #DA924A;
+}
+
+.cm-s-inner .cm-header,
+.cm-s-inner .cm-def,
+.cm-s-inner.cm-header,
+.cm-s-inner.cm-def {
+    color: #8d8df0;
+}
+
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #57ac57;
+}
+
+.cm-s-inner .cm-hr {
+    color: #d8d5d5;
+}
+
+.cm-s-inner .cm-link {
+    color: #d3d3ef;
+}
+
+.cm-s-inner .cm-negative {
+    color: #d95050;
+}
+
+.cm-s-inner .cm-positive {
+    color: #50e650;
+}
+
+.cm-s-inner .cm-string-2 {
+    color: #f50;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier {
+    color: #b7b3b3;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #f3b3f8;
+}
+
+.cm-s-inner .cm-bracket {
+    color: #997;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom {
+    color: #84B6CB;
+}
+
+.cm-s-inner .cm-number {
+    color: #64AB8F;
+}
+
+.cm-s-inner .cm-variable {
+    color: #b8bfc6;
+}
+
+.cm-s-inner .cm-variable-2 {
+    color: #9FBAD5;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #1cc685;
+}
+
+.CodeMirror-selectedtext,
+.CodeMirror-selected {
+    background: #e37d00;
+    color: #fff !important;
+    text-shadow: none;
+}
+
+.CodeMirror-gutters {
+    border-right: none;
+}@import "";
+@import "";
+
+:root {
+    --of-theme-color: #ff9100;
+    --of-theme-color-dark: #4b4b46;
+    --of-darkest-color: #2d2d2d;
+    --of-darker-color: #1e1e1e;
+    --of-dark-color: #292929;
+    --of-dark-color2: #202020;
+    --of-dark-color3:#404040;
+    --of-dark-color4:#232323;
+    --of-dark-color5:#222222;
+    --of-dark-color6:#1b1b1b;
+    --of-strong: white;
+    --of-strong-code: #00ffa6;
+    --of-font-size: 15px; /*字体大小*/
+    --of-selection: #4a89dc;
+    --of-selection-text: white;
+    --of-text-color: #c6c5b8;
+
+    --bg-color: var(--of-darker-color);
+    /* 侧边栏颜色 */
+    --side-bar-bg-color: var(--of-darkest-color);
+    --text-color: var(--of-text-color);
+    /* 这才是文字颜色 */
+    --text-color-main: var(--of-text-color);
+    /* 选中文字的颜色 */
+    --select-text-bg-color: var(--of-theme-color-dark);
+    /* 被激活的目录背景 */
+    --item-hover-bg-color: var(--of-dark-color3);
+    --control-text-color: #b7b7b7;
+    --control-text-hover-color: #fff;
+    --window-border: 1px solid #333;
+    /* 被激活的文件背景 */
+    --active-file-bg-color: var(--of-dark-color4);
+    --active-file-border-color: var(--of-theme-color);
+    --primary-color: var(--of-theme-color);
+    --active-file-text-color: #fff;
+    --item-hover-text-color: #fff;
+    /* 编辑HTML文件 */
+    --rawblock-edit-panel-bd: var(--of-dark-color);
+    --search-select-bg-color: #3c3c3c;
+    
+    --code-bg-color:  var(--of-dark-color);
+    /* --code-bg-color: #31302e; */
+    --footer-bg-color: var(--side-bar-bg-color);
+    --table-bg-darker-color:   var(--of-dark-color2);
+    --table-bg-color:   var(--of-dark-color5);
+    --table-bg-color2:   var(--of-darkest-color);
+    --table-thead-color: var(--of-dark-color6);
+    --md-code-color: var(--of-strong-code);
+    --table-edit-color: var(--of-darkest-color);
+    --task-list-border-color: #ffffff;
+    --task-list-black-border-color: #000000;
+    /* --task-list-bg-color: rgb(176, 21, 21); */
+    --task-list-checked-color: #00ffa6;
+    /* 设置导航栏选中的背景颜色 */
+    --nav-group-item-color: var(--of-theme-color-dark);
+    --select-background: var(--of-theme-color-dark);
+    --other-main-color: var(--of-theme-color);
+    --hover-color: var(--of-dark-color2);
+    /* 引用的背景颜色 */
+    --blockquote-color: var(--of-dark-color);
+    /* 源代码被激活的颜色 */
+    --codemirror-color: var(--of-dark-color);
+    /* 右键菜单按下 */
+    --menu-item-container-btn-hover: var(--of-dark-color2);
+    /* 右键菜单按钮边框 */
+    --menu-item-container-btn: var(--of-theme-color-dark);
+    /* 右键菜单和字数统计 */
+    --context-menu-color: var(--of-darkest-color);
+    /* tooltip颜色（右键菜单按按钮时显示提示的颜色） */
+    --tooltip-color: var(--of-darkest-color);
+    /* tooltip文字颜色*/
+    --tooltip-text-color: white;
+    /* 滚动条颜色 */
+    --scrollbar-color: var(--of-theme-color-dark);
+    /* 源代码模式光标 */
+    --code-cursor-color: var(--of-theme-color);
+    /* 返回按钮 */
+    --back-btn-color: var(--of-theme-color);
+    /* 高亮文字颜色 */
+    --highlight-text-color: var(--of-darker-color);
+    /* 距离底部 */
+    --write-padding-bottom: 400px;
+
+    --ofcodetext: Inconsolata, Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+    --oftext: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+    --text-font: var(--oftext); /*正文字体*/
+    --title-font: var(--oftext); /*标题字体*/
+    --text-line-height: 1.7; /*正文行间距*/
+    --code-line-height: 1.6; /*代码块行间距*/
+    --p-spacing: 0.8rem; /*段间距*/
+
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+html {
+    font-size: var(--of-font-size);
+    -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    background: var(--bg-color);
+    fill: currentColor;
+    line-height: var(--text-line-height);
+}
+
+#write {
+    max-width: 914px;
+    padding-bottom: var(--write-padding-bottom);
+}
+
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea,
+div.code-tooltip-content {
+    /* color: #d0d0d0; */
+    color: var(--text-color-main);
+    border-color: transparent;
+}
+
+div.code-tooltip,
+.md-hover-tip .md-arrow:after {
+    background: var(--code-bg-color);
+}
+
+.native-window #md-notification {
+    border: 1px solid  var(--select-background);
+}
+
+.popover.bottom > .arrow:after {
+    border-bottom-color: var(--code-bg-color);
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+    font-family: var(--text-font);
+}
+
+hr {
+    height: 2px;
+    border: 0;
+    margin: 24px 0 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--title-font);
+    font-weight: bold;
+    clear: both;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    color: white;
+    line-height: 1.4;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--p-spacing);
+    letter-spacing: -1.5px;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid #383838;
+    margin-top: 1em;
+}
+
+h2 {
+    font-size: 1.63rem;
+    margin-bottom: var(--p-spacing);
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.6rem;
+    margin-bottom: var(--p-spacing);
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 1.12rem;
+    margin-bottom: var(--p-spacing);
+}
+
+h5 {
+    font-size: 0.97rem;
+    margin-bottom: var(--p-spacing);
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 0.93rem;
+    margin-bottom: var(--p-spacing);
+    color: #d3d3d3;
+}
+
+img {
+    border-radius: 8px;
+    border-left: none !important;
+    border-right: none !important;
+    max-width: 60%;
+}
+
+@media (max-width: 800px) {
+    img {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 980px) {
+    h3.md-focus:before,
+    h4.md-focus:before,
+    h5.md-focus:before,
+    h6.md-focus:before {
+        color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        position: absolute;
+        left: -1.642857143rem;
+        top: .357142857rem;
+        float: left;
+        font-size: 9px;
+        padding-left: 2px;
+        padding-right: 2px;
+        vertical-align: bottom;
+        font-weight: normal;
+        line-height: normal;
+    }
+
+    h3.md-focus:before {
+        content: 'h3';
+    }
+
+    h4.md-focus:before {
+        content: 'h4';
+    }
+
+    h5.md-focus:before {
+        content: 'h5';
+        top: 0px;
+    }
+
+    h6.md-focus:before {
+        content: 'h6';
+        top: 0px;
+    }
+}
+
+a {
+    text-decoration: none;
+    outline: 0;
+}
+
+a:hover {
+    outline: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+sup.md-footnote {
+    background-color: #555;
+    color: #ddd;
+}
+
+p {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+p,
+ul,
+dd,
+ol,
+hr,
+address,
+pre,
+table,
+iframe,
+.wp-caption,
+.wp-audio-shortcode,
+.wp-video-shortcode {
+    margin-top: 0;
+    margin-bottom: var(--p-spacing);
+    /* 24px */
+}
+
+audio:not([controls]) {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+::-moz-selection {
+    background:  var(--of-selection);
+    color:  var(--of-selection-text);
+    text-shadow: none;
+}
+
+*.in-text-selection,
+::selection {
+    background: var(--of-selection);
+    color:  var(--of-selection-text);
+    text-shadow: none;
+}
+
+ul,
+ol {
+    padding: 0 0 0 1.875rem;
+    /* 30px */
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: decimal;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+    margin: 0;
+}
+
+b,
+th,
+dt,
+strong {
+    font-weight: bold;
+    color: var(--of-strong);
+}
+
+i,
+em,
+dfn,
+cite {
+    font-style: italic;
+}
+
+blockquote {
+    padding: 20px;
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid var(--primary-color);
+    /* background-color: var(--background-color); */
+    box-shadow: 0 2 px4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    line-height: 1.5;
+    /* color: var(--text-color); */
+    color: white
+}
+
+blockquote::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    transform: rotate(45deg);
+}
+
+pre,
+code,
+kbd,
+tt,
+var {
+    font-size: 0.9rem;
+    font-family: var(--ofcodetext);
+}
+
+code,
+tt,
+var {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--md-code-color);
+    border-radius: 0.2rem;
+}
+
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: var(--code-bg-color);
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+}
+
+/* pre.md-fences {
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 20px;
+    background: #31302e;
+} */
+pre.md-fences {
+    font-size: 1rem;
+    padding: 0.5rem !important;
+    border-radius: 8px;
+    word-wrap: normal;
+    background-color: var(--code-bg-color);
+    border: none;
+    font-family: var(--ofcodetext);
+}
+
+.CodeMirror-gutters {
+    background: var(--code-bg-color);
+    border-right: 1px solid transparent;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -2.2em;
+    right: 4px;
+}
+
+code,
+kbd,
+tt,
+var {
+    padding: 0.2rem 0.4rem;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+a {
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+hr {
+    background: var(--other-main-color);
+    /* 下划线颜色 */
+    /* variable */
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+.md-inline-math script {
+    color: #81b1db;
+}
+
+/* 高亮颜色 */
+
+mark {
+    background: var(--other-main-color);
+    color: var(--highlight-text-color);
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.2rem;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+mark a,
+mark .md-content.md-url {
+    color: var(--highlight-text-color);
+}
+
+mark a:hover {
+    color: white;
+}
+
+mark code {
+    color: var(--highlight-text-color);
+    border-radius: 0.2rem;
+    border: 1px solid var(--highlight-text-color);
+    background: none;
+    padding: 0.1rem 0.35rem;
+}
+
+table a {
+    color: var(--primary-color);
+    /* variable */
+}
+
+table tr {
+    border-top: 1px solid #212121;
+    margin: 0;
+    padding: 0;
+}
+table tr th {
+    font-weight: bold;
+    color: var(--other-main-color);
+    border: 1px solid #383838;
+    border-bottom: 0;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #383838;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+table img {
+    border-radius: 8px;
+    border-left: none !important;
+    border-right: none !important;
+    max-width: 100%;
+}
+
+/* th,
+td {
+    border: solid 1px #544e47;
+} */
+
+
+/* 设置表格头部行的样式 */
+th,
+
+th {
+    background-color: var(--table-thead-color);
+}
+
+/* 设置奇偶行的背景颜色 */
+
+tr:nth-child(2n) {
+    background-color: var(--table-bg-darker-color);
+}
+
+tr:nth-child(2n + 1) {
+    background-color: var(--table-bg-color);
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.md-task-list-item {
+    padding-left: 1.25rem;
+}
+
+.md-task-list-item > input {
+    top: auto;
+}
+
+.md-task-list-item > input:before {
+    content: "";
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 2px solid var(--task-list-border-color);
+    /* background-color: var(--task-list-bg-color); */
+    margin-top: -0.4rem;
+    border-radius: 4px
+}
+
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before {
+    /* content: '\2713';
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    color: var(--task-list-checked-color); */
+    background-color: var(--task-list-checked-color);
+    border-radius: 4px;
+    border: 2px solid var(----task-list-black-border-color);
+}
+
+
+
+/** quick open **/
+.auto-suggest-container {
+    border: 0px;
+    background-color: var(--select-background);
+}
+
+#typora-quick-open {
+    background-color: var(--select-background);
+}
+
+#typora-quick-open input{
+    background-color: var(--select-background);
+    border: 0;
+    border-bottom: 1px solid grey;
+}
+
+.typora-quick-open-item {
+    background-color: inherit;
+    color: inherit;
+}
+
+.typora-quick-open-item.active,
+.typora-quick-open-item:hover {
+    background-color: var(--other-main-color);
+    color: white;
+}
+
+.typora-quick-open-item:hover {
+    background-color:  var(--of-theme-color-dark);
+}
+
+.typora-search-spinner > div {
+  background-color: #fff;
+}
+
+/* #write pre.md-meta-block {
+    border-bottom: 1px dashed #ccc;
+    background: transparent;
+    padding-bottom: 0.6em;
+    line-height: 1.6em;
+} */
+#write pre.md-meta-block {
+    font-size: 0.8rem;
+    border: 1px dashed #ccc;
+    border-color: var(--primary-color);
+    padding: 1rem;
+    border-radius: 8px;
+    line-height: 1.45;
+    background: transparent;
+    font-family: var(--ofcodetext);
+}
+
+.btn,
+.btn .btn-default {
+    background: transparent;
+    color: #b8bfc6;
+}
+
+.ty-table-edit {
+    border-top: 1px solid gray;
+    background-color: var(--table-edit-color);
+}
+
+.popover-title {
+    background: transparent;
+}
+
+.md-image>.md-meta {
+    color: #BBBBBB;
+    background: transparent;
+}
+
+.md-expand.md-image>.md-meta {
+    color: #DDD;
+}
+
+#write>h3:before,
+#write>h4:before,
+#write>h5:before,
+#write>h6:before {
+    border: none;
+    border-radius: 0px;
+    color: #888;
+    text-decoration: underline;
+    left: -1.4rem;
+    top: 0.2rem;
+}
+
+#write>h3.md-focus:before {
+    top: 2px;
+}
+
+#write>h4.md-focus:before {
+    top: 2px;
+}
+
+.md-toc-item {
+    color: #A8C2DC;
+}
+
+#write div.md-toc-tooltip {
+    background-color:  var(--select-background);
+}
+
+.dropdown-menu .btn:hover,
+.dropdown-menu .btn:focus,
+.md-toc .btn:hover,
+.md-toc .btn:focus {
+    color: white;
+    background: black;
+}
+
+#toc-dropmenu {
+    background:  var(--select-background);
+    border: 1px solid rgba(253, 253, 253, 0.15);
+}
+
+#toc-dropmenu .divider {
+    background-color: #9b9b9b;
+}
+
+.outline-expander:before {
+    top: 2px;
+}
+
+#typora-sidebar {
+    box-shadow: none;
+    border-right: 1px dashed;
+    border-right: none;
+}
+
+.sidebar-tabs {
+    border-bottom:0;
+}
+
+#typora-sidebar:hover .outline-title-wrapper {
+    border-left: 1px dashed;
+}
+
+.outline-title-wrapper .btn {
+    color: inherit;
+}
+
+.outline-item:hover {
+    border-color: var(--item-hover-bg-color);
+    background-color: var(--item-hover-bg-color);
+    color: white;
+}
+
+h1.md-focus .md-attr,
+h2.md-focus .md-attr,
+h3.md-focus .md-attr,
+h4.md-focus .md-attr,
+h5.md-focus .md-attr,
+h6.md-focus .md-attr,
+.md-header-span .md-attr {
+    color: #8C8E92;
+    display: inline;
+}
+
+.md-comment {
+    color: var(--other-main-color);
+    opacity: 0.8;
+}
+
+.md-inline-math svg {
+    color: #c6c1b8;
+}
+
+#math-inline-preview .md-arrow:after {
+    background: black;
+}
+
+/* 退出菜单 */
+
+.modal-content {
+    background: var(--bg-color);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.modal-title {
+    font-size: 2.5rem;
+}
+
+.modal-content input {
+    background-color: rgba(26, 21, 21, 0.51);
+    color: white;
+}
+
+.modal-content .input-group-addon {
+    color: white;
+}
+
+.modal-backdrop {
+    background-color: rgba(174, 174, 174, 0.7);
+}
+
+.modal-content .btn-primary {
+    border-color: var(--primary-color);
+}
+
+.modal-open .modal.fade.in {
+    background: none;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.md-table-resize-popover {
+    background-color: var(--code-bg-color);
+}
+
+.form-inline .input-group .input-group-addon {
+    color: white;
+}
+
+#md-searchpanel {
+    border-bottom: 1px dashed grey;
+}
+
+/* 右键菜单和字数统计 */
+
+.context-menu,
+#spell-check-panel,
+#footer-word-count-info {
+    background-color:  var(--context-menu-color);
+}
+
+.context-menu.dropdown-menu .divider,
+.dropdown-menu .divider {
+    background-color: #777777;
+    opacity: 1;
+}
+
+/* 页尾模糊 */
+
+footer {
+    backdrop-filter: saturate(120%) blur(20px) brightness(0.85);
+    border: none !important;
+    background: none;
+    background-color: var(--footer-bg-color);
+}
+/* footer {
+    color: inherit;
+} */
+
+@media (max-width: 1000px) {
+    footer {
+        border-top: none;
+    }
+    footer:hover {
+        color: inherit;
+    }
+}
+
+#file-info-file-path .file-info-field-value:hover {
+    background-color: #555;
+    color: #dedede;
+}
+
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color);
+}
+
+.megamenu-menu-panel h2,
+.megamenu-menu-panel h1 {
+    color: inherit;
+}
+
+.long-btn {
+    margin-bottom: 12px;
+    margin-left: 2px;
+    background-color: var(--of-darkest-color);
+    border: 1px solid #383838;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.long-btn:hover {
+    background-color: var(--other-main-color);
+    color: black !important ;
+}
+
+#m-import-local:hover .preference-item-hint {
+    color: black !important ;
+}
+
+.megamenu-menu-panel input[type='text'] {
+    background: inherit;
+    border: 0;
+    border-bottom: 1px solid;
+}
+
+#recent-document-table {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+#recent-file-panel {
+    padding: 10px;
+}
+
+#recent-file-panel-action-btn {
+    background: inherit;
+    border: 1px grey solid;
+}
+
+#recent-file-panel thead tr {
+    background-color: var(--table-thead-color);
+}
+
+#recent-file-panel tbody tr:nth-child(2n) {
+    background-color: var(--table-bg-darker-color);
+}
+
+#recent-file-panel tbody tr:nth-child(2n + 1) {
+    background-color: var(--table-bg-color);
+}
+
+
+.modal-footer .btn-default, 
+.modal-footer .btn-primary,
+.modal-footer .btn-default:not(:hover) {
+    border: 1px solid;
+    border-color: transparent;
+    border-radius: 0.3rem !important;
+}
+
+/* #recent-file-panel-action-btn:hover {
+    background-color: var(--hover-bg-color1);
+} */
+
+/* 一体化菜单 */
+
+#megamenu-back-btn {
+    border-color: transparent;
+    color: var(--back-btn-color);
+}
+
+.megamenu-menu-header:hover {
+    background-color: var(--item-hover-bg-color);
+}
+
+.megamenu-menu-panel .dropdown-menu > li > a {
+    color: inherit;
+    background-color: var(--select-background);
+    text-decoration: none;
+}
+
+.megamenu-menu-panel table td:nth-child(1) {
+    color: inherit;
+    font-weight: bold;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(1) {
+    color: white;
+}
+
+/* .megamenu-menu-sidebar tbody tr:hover td:nth-child(1) {
+    background-color: rgb(0, 0, 0);
+} */
+.megamenu-menu {
+    background-color: var(--side-bar-bg-color);
+}
+
+
+
+
+
+.btn-primary {
+    border: none;
+    border-radius: 0.3rem;
+    background-color: var(--other-main-color);
+    color: white !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    color: white;
+    background-color: var(--of-theme-color-dark) !important;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
+    /* color: white;
+    border: 1px solid #ddd; */
+    background-color: var(--of-theme-color-dark);
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+.megamenu-menu-panel tbody tr:hover td:nth-child(2) {
+    color: inherit;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #eee;
+    background: transparent;
+}
+
+.mouse-hover .toolbar-icon.btn:hover,
+#w-full.mouse-hover,
+#w-pin.mouse-hover {
+    background-color: inherit;
+}
+
+.typora-node::-webkit-scrollbar {
+    width: 5px;
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical {
+    background: rgba(250, 250, 250, 0.3);
+}
+
+.typora-node::-webkit-scrollbar-thumb:vertical:active {
+    background: rgba(250, 250, 250, 0.5);
+}
+
+#w-unpin {
+    background-color:  var(--other-main-color);
+}
+
+/* 放大缩小的颜色 */
+#top-titlebar .toolbar-icon.btn:hover {
+    color: var(--item-hover-text-color);
+    background-color: var(--of-theme-color-dark);
+}
+
+/* 关闭按钮的颜色 */
+#top-titlebar #w-close:hover {
+    background-color: #e81123 !important;
+}
+
+#top-titlebar, #top-titlebar * {
+    color: var(--item-hover-text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn,
+#footer-word-count:hover,
+.ty-show-word-count #footer-word-count {
+    background: var(--hover-color);
+    /* 字数统计按下去的颜色 */
+}
+
+#toggle-sourceview-btn:hover {
+    color: white;
+    background: var(--hover-color);
+    /* 查看源代码按下去的颜色 */
+}
+
+/** focus mode */
+.on-focus-mode .md-end-block:not(.md-focus):not(.md-focus-container) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-end-block:not(.md-focus) img,
+.on-focus-mode .md-task-list-item:not(.md-focus-container)>input {
+    opacity: #686868 !important;
+}
+
+.on-focus-mode li[cid]:not(.md-focus-container){
+    color: #686868;
+}
+
+.on-focus-mode .md-fences.md-focus .CodeMirror-code>*:not(.CodeMirror-activeline) *,
+.on-focus-mode .CodeMirror.cm-s-inner:not(.CodeMirror-focused) * {
+    color: #686868 !important;
+}
+
+.on-focus-mode .md-focus,
+.on-focus-mode .md-focus-container {
+    color: white;
+}
+
+.on-focus-mode #typora-source .CodeMirror-code>*:not(.CodeMirror-activeline) * {
+    color: #686868 !important;
+}
+
+
+/*diagrams*/
+#write .md-focus .md-diagram-panel {
+    border: 1px solid white;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+/*diagrams*/
+#write .md-focus.md-fences-with-lineno .md-diagram-panel {
+    margin-left: auto;
+}
+
+.md-diagram-panel-error {
+    color: #f1908e;
+}
+
+.active-tab-files #info-panel-tab-file,
+.active-tab-files #info-panel-tab-file:hover,
+.active-tab-outline #info-panel-tab-outline,
+.active-tab-outline #info-panel-tab-outline:hover {
+    color: white;
+}
+
+.sidebar-footer-item:hover,
+.footer-item:hover {
+    background: inherit;
+    color: white;
+}
+
+.ty-side-sort-btn.active,
+.ty-side-sort-btn:hover,
+.selected-folder-menu-item a:after {
+    color: white;
+}
+
+#sidebar-files-menu {
+    border:solid 1px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.79);
+    background-color: var(--bg-color);
+}
+
+.file-list-item {
+    border-bottom:none;
+}
+
+.file-list-item-summary {
+    opacity: 1;
+}
+
+.file-list-item.active:first-child {
+    border-top: none;
+}
+
+.file-node-background {
+    height: 32px;
+}
+
+.file-library-node.active>.file-node-content,
+.file-list-item.active {
+    color: white;
+    color: var(--active-file-text-color);
+}
+
+.file-library-node.active>.file-node-background{
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+.file-list-item.active {
+    background-color: rgb(34, 34, 34);
+    background-color: var(--active-file-bg-color);
+}
+
+#ty-tooltip {
+    background-color:  var(--tooltip-color);
+    color: var(--tooltip-text-color);
+}
+
+/* 右键菜单按下 */
+.menu-item-container:hover {
+    background-color: var(--menu-item-container-btn-hover);
+}
+
+/* 右键菜单按钮 */
+.menu-item-container a.menu-style-btn {
+    /* background: var(--menu-item-container-btn); */
+    border: 1px solid;
+    border-color: var(--menu-item-container-btn);
+    border-radius: 5px;
+}
+
+.md-task-list-item>input {
+    margin-left: -1.3em;
+    margin-top: 0.3rem;
+    -webkit-appearance: none;
+}
+
+.md-mathjax-midline {
+    background-color:  var(--select-background);
+    border-bottom: none;
+}
+
+footer.ty-footer {
+    border-color: var(--select-background);
+}
+
+/* 偏好 */
+
+.ty-preferences .btn-default {
+    background: transparent;
+}
+.ty-preferences .btn-default:hover {
+    background: var(--select-background);
+}
+
+.ty-preferences select {
+    border: 1px solid #9a9a9a;
+    height: 21px;
+}
+
+.ty-preferences .nav-group-item.active,
+.export-item.active,
+.export-items-list-control,
+.export-detail {
+    background: var(--item-hover-bg-color);
+}
+
+.ty-preferences input[type="search"] {
+    border-color: var(--code-bg-color);
+    background: var(--code-bg-color);
+    line-height: 22px;
+    border-radius: 6px;
+    color: white;
+}
+
+.ty-preferences input[type="search"]:focus {
+    box-shadow: none;
+}
+
+[data-is-directory="true"] .file-node-content {
+    margin-bottom: 0;
+}
+
+.file-node-title {
+    line-height: 22px;
+}
+
+.html-for-mac .file-node-open-state, .html-for-mac .file-node-icon {
+    line-height: 26px;
+}
+
+/*滚动条*/
+
+::-webkit-scrollbar {
+    width: 8px;
+}  
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 230, 230, 0.30);
+    border-radius: 3px;
+    background-color: var(--scrollbar-color);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(230, 230, 230, 0.50);
+}
+
+#typora-sidebar:hover div.sidebar-content-content::-webkit-scrollbar-thumb:horizontal {
+    background: rgba(230, 230, 230, 0.30);
+}
+
+.nav-group-item:active {
+    background-color:  var(--nav-group-item-color) !important;
+}
+
+.md-search-hit {
+    background:  var(--select-background);
+    color: white;
+}
+
+.md-search-hit * {
+    color: white;
+}
+
+#md-searchpanel input {
+    color: white;
+}
+
+.modal-backdrop.in {
+    opacity: 1;
+    backdrop-filter: blur(1px);
+}
+
+.clear-btn-icon {
+    top: 8px;
+}
+
+
+/* 代码模式 */
+
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property
+{
+    color: var(--other-main-color);
+}
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor{
+    border-left: 3px solid var(--code-cursor-color);
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #ffffff;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #00bfff
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+    color: #aa00ff;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link {
+    color: #95B94B;
+}
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: var(--codemirror-color);
+}
+
+.cm-s-typora-default .cm-comment, .cm-s-typora-default .cm-code {
+	color: #e1bb8a;
+}
+
+
+</style><title>An Analysis of Real Computer Engineers react to Sabrina Wallace</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='an-analysis-of-real-computer-engineers-react-to-sabrina-wallace'><span>An Analysis of &quot;Real Computer Engineers react to Sabrina Wallace&quot;</span></h1><p><span>10/2/2024 - By Casey Rodgers</span></p><p><span>This is an analysis of the YouTube video &quot;Real Computer Engineers react to Sabrina Wallace&quot; Host: Raynard of the Mind of Steele channel, with guests, Chris - an electrical Engineer and M C Toon / Mike and electronic engineer </span></p><h3 id='introduction'><span>Introduction</span></h3><p><span>I have been watching quite a lot of videos from Sabrina Wallace to try to understand what her claims are. I am not endorsing everything Sabrina Wallace claims for sure because she gets into personal experiences with angels, mentions tartaria, akashic records, and a wide variety of odd claims that are very controversial. I am calling these guys out though for not looking more deeply into some of the claims she has been making which have corroboration with academic or other sources. This is also a great teaching opportunity for viewers of this content because I have been thinking about what an skeptic would ask if they see Sabrina&#39;s content.  I am going to analyze what Sabrina says which is from her earliest videos, taken in only small segments without even looking at the context because I know her work pretty well. I will then give a lot more background and answer some of the skeptical questions while highlighting how shallow their analysis is of her work. </span></p><hr /><h3 id='244'><a href='https://youtu.be/AUImLcTuRQw?si=FSVPTfXP7Sh6PaF5&amp;t=164'><span>2:44</span></a><span>  </span></h3><blockquote><p><em><strong><span>Sabrina</span></strong><span>:</span></em><span> These are international standards and are not going away. These are international standards to run data through humans ... for the global information grid architecture</span></p></blockquote><blockquote><p><em><strong><span>Chris</span></strong></em><span> The signals would not be sent through you or use your body as a means of transmission. We access data from personal worn devices. </span></p></blockquote><p><span>The nuance here too is that Sabrina is more clear in her more recent works in that the dcxss (802.15.6) is the standard for which devices </span><strong><span>on</span></strong><span> or </span><strong><span>inside</span></strong><span> the body.  Here is a quote from Wikipedia on the </span><a href='https://en.wikipedia.org/wiki/Body_area_network#cite_note-1'><span>802.15.16 standard</span></a><span>:</span></p><blockquote><p><span>A </span><strong><span>body area network</span></strong><span> (</span><strong><span>BAN</span></strong><span>), also referred to as a </span><strong><span>wireless body area network</span></strong><span> (</span><strong><span>WBAN</span></strong><span>), a </span><strong><span>body sensor network</span></strong><span> (</span><strong><span>BSN</span></strong><span>) or a </span><strong><span>medical body area network</span></strong><span> (</span><strong><span>MBAN</span></strong><span>), is a wireless network of wearable computing devices.[</span><a href='https://en.wikipedia.org/wiki/Body_area_network#cite_note-1'><span>1</span><span>]</span></a><span>[</span><a href='https://en.wikipedia.org/wiki/Body_area_network#cite_note-2'><span>2</span><span>]</span></a><span>[</span><a href='https://en.wikipedia.org/wiki/Body_area_network#cite_note-3'><span>3</span><span>]</span></a><span>[</span><a href='https://en.wikipedia.org/wiki/Body_area_network#cite_note-4'><span>4</span><span>]</span></a><span>[</span><a href='https://en.wikipedia.org/wiki/Body_area_network#cite_note-Geller-5'><span>5</span><span>]</span></a><span> BAN devices may be embedded inside the body as implants or pills,[</span><a href='https://en.wikipedia.org/wiki/Body_area_network#cite_note-6'><span>6</span><span>]</span></a><span> may be </span><a href='https://en.wikipedia.org/wiki/Wearable_technology'><span>surface-mounted on the body in a fixed position</span></a><span>, or may be accompanied devices which humans can carry in different positions, such as in clothes pockets, by hand, or in various bags.[</span><a href='https://en.wikipedia.org/wiki/Body_area_network#cite_note-Poslad-7'><span>7</span><span>]</span></a></p></blockquote><p><span>It may seem like Chris is correct but it is not just about something you are wearing. It can be devices within the body like a pacemaker or even something even smaller like a micro, or nano-sized biosensor (they do mention this shortly after).  Sabrina talks all the time about this article: </span><a href='https://spectrum.ieee.org/turning-the-body-into-a-wire' target='_blank' class='url'>https://spectrum.ieee.org/turning-the-body-into-a-wire</a><span> , Read the sub headline “When the human body is the communications channel, it’s hard to hack the data.” Here is a quote:</span></p><blockquote><p><span>&quot;In 2007 U.S. vice president </span><a href='https://en.wikipedia.org/wiki/Dick_Cheney'><span>Dick Cheney</span></a><span> ordered his doctors </span><a href='https://www.cnn.com/2013/10/20/us/dick-cheney-gupta-interview/index.html'><span>to disable all wireless signals</span></a><span> to and from his Internet-connected pacemaker. Cheney later said that the decision was motivated by his desire to prevent terrorists from being able to hack his pacemaker and use it to lethally shock his heart...At a series of conferences in 2011 and 2012, for example, New Zealand hacker </span><a href='https://en.wikipedia.org/wiki/Barnaby_Jack'><span>Barnaby Jack</span></a><span> showed that connected medical devices </span><a href='https://www.vice.com/en/article/avnx5j/i-worked-out-how-to-remotely-weaponise-a-pacemaker'><span>could be remotely attacked</span></a><span>.&quot;</span></p></blockquote><p><span>So what is the solution? The article explains that a new method of communication that is much harder to detect was developed and uses the body as a communication channel purposefully for security:</span></p><ul><li><p><span>&quot;We call the method of sending signals directly through the body </span><a href='https://www.nature.com/articles/s41598-018-38303-x'><span>electro-quasistatic human-body communication</span></a><span>. That&#39;s a mouthful, so let&#39;s just think of it as a body channel. The important takeaway is that by exploiting the body&#39;s own conductive properties, we can avoid the pitfalls of both wired and wireless channels.&quot;</span></p></li></ul><h3 id='346'><a href='https://youtu.be/AUImLcTuRQw?si=FNjutncce4EI7eeq&amp;t=226'><span>3:46</span></a></h3><blockquote><p><em><strong><span>Sabrina</span></strong><span>:</span></em><span>  ...wireless probably because it is. *points at the paper to the body. What is this? This is your cybersecurity. </span></p></blockquote><blockquote><p><em><strong><span>M C Toon</span></strong></em><span>:  Cybersecurity is way more than just your phone. </span></p><p><em><strong><span>Raynard</span></strong></em><span> You may want some cybersecurity if they are sending signals through you. </span></p></blockquote><p><span>Absolutely Sabrina is confusing here in the tiny short clip you included. When Sabrina talks about cybersecurity she is very clear when talking about the article above. When Dick Cheney’s pacemaker was hacked it rang alarm bells and so the wireless body area network is not secure there’s going to be problems yet they do not go into the cybersecurity layers of the internet that she shows and explains there is the MAC ID, and the physical layer and all the layers above that with encryption which she explains. They may not be taking her out of context in this particular video be she explains this over and over in her other videos.</span></p><blockquote><p><em><strong><span>M C Toon</span></strong></em><span>:  How was it installed in me? I have no recollection.</span></p></blockquote><p><span>I am not convinced 100% of people have sensors in them but you guys are missing a ton of information regarding potential the use of sensors in food, cosmetics, packaging, medicine, dentistry, geoengineering,... The more I look for them the more information I find it’s really alarming. </span></p><blockquote><p><em><strong><span>Raynard:</span></strong></em><span>  I just don&#39;t know that is one of the mysteries of Sabrina she doesn’t explain this. </span></p></blockquote><p><span>I agree there are holes in the information of where the sensors are coming from, how many people them, or how they get inside the body. There are so many questions such as how long they stay, or if they can be targeted so maybe ask deeper questions and actually look for yourself:</span></p><ul><li><p><a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5766453/'><span>Nanotechnology: current uses and future applications in the food industry</span></a><span> - This article gets into how biosensors are used in the food industry. </span></p></li></ul><p><img src="C:\Users\werty\Documents\BD convergence\Typora Notes\Mind of Steele Debunked\13205_2018_1104_Fig2_HTML.jpg" referrerpolicy="no-referrer" alt="Steps of food management"></p><p><span>The paper emphasized that the nanotechnology can enhance the properties of the food, flavors, and require less pesticides when sensor based solutions are involved however there are health hazard effects that are still not fully understood and the dual-use problem is not mentioned by these authors. </span></p><p><img src="C:\Users\werty\Documents\BD convergence\Typora Notes\Mind of Steele Debunked\13205_2018_1104_Fig5_HTML.jpg" referrerpolicy="no-referrer"></p><p><span>Many people in the conspiracy circle assume that they may be within the vaccines since some doctors, especially after COVID has claimed this is so. Independent journals have even claimed to have seen micro-sized machines, or sensors in the body. Dr. John Campbell is worried in his analysis of the </span><a href='https://youtu.be/onww2X-ecfg?si=VCjHNYl3-f_HlvmQ'><span>Japan data.</span></a></p><ul><li><p><a href='https://pubmed.ncbi.nlm.nih.gov/30648562/'><span>The current application of nanotechnology in food and agriculture</span></a></p></li></ul><p><span>This is a similar article here is quote from the abstract: </span></p><blockquote><p><span>We highlighted the potential application of bio-synthesized and bio-inspired nanomaterial for sustainable development. However, fundamental questions with regard to high performance, low toxic nanomaterials need to be addressed to fuel active development and application of nanotechnology. Regulation and legislation are also paramount to regulating the manufacturing, processing, application, as well as disposal of nanomaterials.</span></p></blockquote><p><span>So what is the big deal right? They detect pathogens and gasses and have an incredible array of possible positive uses. My biggest concern besides the health issues is the concept of </span><a href='https://en.wikipedia.org/wiki/Dual-use_technology'><span>dual-use</span></a><span> especially since the development of this stuff is set up that way. In 2013 the WHO published a report in on </span><a href='https://web.archive.org/web/20131029002501/http://www.who.int/csr/durc/durc_feb2013_full_mtg_report.pdf'><span>Dual Use of Concern</span></a><span> which states some experiment what would trigger concern and further evaluation would include : &quot;enable evasion of diagnostic detection or modalities&quot;. This is especially concerning nanotechnology because as you will see later Dr. Giordono describes nanotechnology based weaponry as nearly impossible to detect and all but the most robust filters cannot capture. Just look up nanotechnology industries or others that use graphene or graphene oxide and you will find tons of peer review literature on it. There is even a special initiative on it in the EU called </span><a href='https://graphene-flagship.eu/'><span>graphene-flagship</span></a><span>. Why is graphene and graphene oxide special? </span></p><ul><li><p><a href='https://www.youtube.com/live/wktdC-gJNEE?si=QXcOCgwQzNtbqgKX'><span>Nanonetworking in the Terahertz Band (and Beyond): From Nanomaterials to Macrosystems</span></a></p></li></ul><p><span>The skeptics in the video might want to catch up with the real state of engineering and science before running your mouths against Sabrina. Take it up with  professor Pradesh. He is telling you outright that the plan for 6g technology in terms of healthcare, and other applications is huge. This is called the Internet of nano-bio things (IonBT). Here is another video on the IoNBT technology:</span></p><ul><li><p><a href='https://www.youtube.com/watch?v=YAtQFkEg5-w&amp;t=796s'><span>The internet of nano-bio things.</span></a><span> </span></p></li></ul><p><span>The real question is how much of this technology is being tested on people especially when considering the </span><a href='https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2787205'><span>emergency authorization use</span></a><span>, and other such laws being in effect in national around the world. </span></p><h3 id='530'><a href='https://youtu.be/AUImLcTuRQw?si=sMt8gu2FQtAK9M8Y&amp;t=330'><span>5:30</span></a><span> </span></h3><blockquote><p><strong><span>Sabrina</span></strong><span>: They&#39;re note telling you about the bluetooth and zigbee being hooked up to your body</span></p></blockquote><blockquote><p><em><strong><span>M C Toon</span></strong></em><span>: It&#39;s so secret it&#39;s published in peer review articles. How is this even powered it would need a battery.</span></p></blockquote><p><span>Another weak attempt at debunking her claims. For anyone who has watched some of Sabrina&#39;s videos would know she doesn&#39;t talk about large-scale devices in the context of any problems she even explained clearly the issue with Dick Cheney. She does mention the use of such data for agentic AI, the digital twin and global information grid paradigm but more on this later. </span></p><p><span>In terms of the power source for such small sensors in the body, the video on 6g explains this well. She quotes Professor Akyldiz a lot. He explains this well. Piezo-electric nano-wires with nano-ultra-capacitors. This is what appears to be the state of the art. I dug deeply into this but hey maybe you should use your fingers so just look up those terms yourself and read. I will leave this as an exercise for the viewer / reader.</span></p><h3 id='631'><a href='https://youtu.be/AUImLcTuRQw?si=u-XzfjLC1I9Fnkyn&amp;t=391'><span>6:31</span></a><span> </span></h3><blockquote><p><em><strong><span>Chris:</span></strong></em><span> How do the sensors communicate with the outside of the body? Especially if they are deep inside the body and there is attenuation of radio waves.</span></p></blockquote><p><span>Yes this was something I could not quite understand either until you realize if the sensors stay on the skin it is very feasible. There are wireless systems called mesh networks (which you do talk about later) that can be distributed throughout the body. So let me be even more clear and hit you with tons of articles:</span></p><ul><li><p><span>:</span><a href='https://www.researchgate.net/publication/236094276_A_Survey_on_Intrabody_Communications_for_Body_Area_Network_Applications' target='_blank' class='url'>https://www.researchgate.net/publication/236094276_A_Survey_on_Intrabody_Communications_for_Body_Area_Network_Applications</a><span> </span></p></li></ul><p><span>To be clear it is intra-body communications of many bodies. Internet of bodies. </span></p><p><img src="C:\Users\werty\Documents\BD convergence\Typora Notes\Mind of Steele Debunked\IBC article 1.png" referrerpolicy="no-referrer"></p><blockquote><p><span>&quot;Monitoring vital signs (e.g. heart-beat, body posture, blood pulse pressure, oxygen saturation [6]) is now performed through miniature sensors. They are lightweight and intelligent devices, capable of sensing physical phenomena, basic processing and wireless transmission. Wireless sensor motes are attached on or implanted </span><strong><span>in the body</span></strong><span> and develop short distance wireless networks around the human body, using RF transmission technology [7]. In the late 2011, the standardization of a new wireless</span>
+<span>body area network (WBAN) protocol, IEEE 802.15.6 by task group (TG6) was ratified. &quot; </span></p></blockquote><p><span>In this paper they quote having very small amounts of energy per pulse ~105 nJ, and that to record many body signals effectively would not require a low data rate 250kb/s. It does mention needing a PAN device like a phone to communicate however systems like Starlink or the phenomenon of gang-stalking suggest if people are going to be covertly testing they can. </span><a href='https://apps.dtic.mil/sti/pdfs/ADA470686.pdf'><span>Synthetic aperture radar</span></a><span> and </span><a href='https://ieeexplore.ieee.org/abstract/document/8768105'><span>passive radar</span></a><span> systems are another thing Sabrina has mentioned as a world wide monitoring possibility, whether or not sensors are present. </span></p><ul><li><p><a href='https://www.researchgate.net/publication/349528163_Inter-body_coupling_in_electro-quasistatic_human_body_communication_theory_and_analysis_of_security_and_interference_properties?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoiX2RpcmVjdCJ9fQ'><span>Inter-body coupling in electro-quasistatic human body communication: theory and analysis of security and interference properties</span></a></p></li></ul><p><img src="C:\Users\werty\Documents\BD convergence\Typora Notes\Mind of Steele Debunked\Inter-body-coupling-in-Electro-quasistatic-region-a-Interference-in-received-EQS-HBC.png" referrerpolicy="no-referrer"></p><p><span>This article covers many ways the IBC technology can present cybersecurity concerns.</span></p><h3 id='723'><a href='https://youtu.be/AUImLcTuRQw?si=RFl3bt2_ExuhcIcA&amp;t=443'><span>7:23</span></a></h3><blockquote><p><em><strong><span>Raynard:</span></strong></em><span> Imagine using some kind of device that could use the sugar in the body to power itself. </span><em><strong><span>Chris:</span></strong></em><span>  “The molecular engineering needed would be immense” </span></p></blockquote><p><span>Funny they mention that since the effort to understand all the chemistry, biology, neuroscience, etc... would be akin to another Manhattan Project. Yes that is exactly what appears to be happening. Already billions and billions have been spent on development at DARPA, The national nanotechnology initiative, the brain initiative, the human genome project, etc... Another name for it is called the </span><a href='https://www.iec.ch/system/files/2022-12/day_1_seg_12_webinar_biodigital_convergence_v1.0_0.pdf'><span>Biodigital Convergence</span></a><span>. Ever heard of transhumanism? In case I didn&#39;t quite understand Chris here and he is referring to the how immense the energy would be needed for these devices is, 105nJ per pulse is quite small and the vibration from moving around, heartbeat or breathing alone would be enough. </span></p><p><img src="C:\Users\werty\Documents\BD convergence\Typora Notes\Mind of Steele Debunked\Screenshot 2024-10-02 233327.png" referrerpolicy="no-referrer"></p><p><span>Hmm geoengineering, biohacking, GMO, sensor based epidemiology monitoring, organ-on-a-chip, the UN&#39;s sustainability goals? That sounds like conspiracy to me. Are they trying to suggest this all need to happen in order to reach the sustainability goals? I think so and Sabrina does too. In fact she is so convinced she thinks we will not have choice. I really hope she is wrong,</span></p><blockquote><p><em><strong><span>Chris:</span></strong></em><span> and </span><em><strong><span>Raynard:</span></strong></em><span> You might imagine using sugar to power the devices. </span></p></blockquote><p><span>They might want to understand how far things are. Using Yeast, and bacteria to manufacture practically any biochemical you can imagine, it&#39;s called </span><a href='https://www.darpa.mil/news-events/2021-12-08'><span>living foundries</span></a><span>. Using sugar is such a stupid idea on how the nano-chips would be powered, as it would definitely harm peoples blood glucose levels! The peer review literature is just absolutely wild here is a paper describing being able to make communication networking schemes using pheromones:</span></p><ul><li><p><a href='https://molecularcommunications.org/wp-content/uploads/2023/06/Towards-an-End-to-end-Model-for-Yeast-Cell-Communications-Using-Pheromones.pdf'><span>Towards an end-to-end model for yeast cell communications using pheromones</span></a><span> </span></p></li></ul><p><span>But they want to make fun of Sabrina for getting the basics wrong. I should also point out that on her Odysee channel you find her tech PDF document that has a lot of these links and more on it. This is some of what in on it and more. </span></p><h3 id='811'><a href='https://youtu.be/AUImLcTuRQw?si=Vk1G7Tkw1RefmQq7&amp;t=491'><span>8:11</span></a></h3><blockquote><p><em><strong><span>Sabrina:</span></strong></em><span> (Putting aside Sabrina&#39;s comments on satanic ritual abuse and the targeted individual controversy for now) She says they have everyone implanted right now showing her card. </span></p></blockquote><blockquote><p><em><strong><span>Chris:</span></strong></em><span> She must mean 2.4 GHz. </span><em><strong><span>M C Toon:</span></strong></em><span> Yeah the frequency at that would not penetrate far at all. It&#39;s obvious she doesn&#39;t know what she is talking about. </span></p></blockquote><p><span>Yes this is probably a mistake and her videos are much more clear in the most recent ones I have seen. Again just watch the 6g video. In it, he explains the concept of upconversion materials. Sabrina does point this out over and over in her other videos though so they must not have watched any other videos besides the one they make clips from. She explains the upconversion. 5G electromagnetic waves can couple very strongly to graphene and graphene oxide. This along with other materials can upconvert the frequency into the terahertz chip and then quantum dot sensors or other methods can read that information. </span></p><ul><li><p><a href='https://pubs.aip.org/aip/apl/article-abstract/97/19/193103/324025/Radio-frequency-characteristics-of-graphene-oxide?redirectedFrom=fulltext'><span>Radio-frequency characteristics of graphene oxide</span></a></p></li></ul><p><span>This paper describes how frequencies from 0.5 to 40 GHz can couple to Graphene why is this important? Because this is a possible mechanism for why people could be experiencing ill effects from 5g but more on this later. </span></p><ul><li><p><a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10176577/'><span>Ultrafast Tunable Terahertz-to-Visible Light Conversion through Thermal Radiation from Graphene Metamaterials</span></a></p></li></ul><p><span>This paper describes how graphene can upconvert microwaves to the terahertz frequency range. Oh wow so maybe Sabrina was right. The odly specific number of 2.4THz is probably a mistake but in her more recent video she clearly says that up-conversion technology is very key to new technology and that it may be used for wireless optogenetic applications. </span></p><p><span>When graphene is excited by intense terahertz pulses, it can emit broadband light in the visible range through thermal radiation from its heated electron system which is because the size and properties of material can couple to electromagnetic waves in interesting ways when they are micro to nano size. </span></p><p><a href='https://pubs.aip.org/aapt/ajp/article-abstract/51/4/323/570367/How-can-a-particle-absorb-more-than-the-light?redirectedFrom=fulltext'><span>How can a particle absorb more than the light incident on it?</span></a><span> </span></p><p><span>This article shows how electromagnetics with small particles can have interesting effects where the  power density can be concentrated on particles if they are resonant with them and they have the right material characteristics. </span></p><h3 id='1015'><a href='https://youtu.be/AUImLcTuRQw?si=rRZDETsLYJkYHmpm&amp;t=615'><span>10:15</span></a><span> </span></h3><blockquote><p><em><strong><span>Sabrina:</span></strong></em><span> No tower required, and how did we get there? With the medical implant radio frequency band I just show you. </span></p></blockquote><blockquote><p><em><strong><span>Raynard</span></strong></em><span> , </span><em><strong><span>M C Toon</span></strong></em><span> ,and </span><em><strong><span>Chris:</span></strong></em><span> Maybe a mesh network would be used, but mesh networks would require power from at least a battery. </span></p></blockquote><p><span>Yes this correct and by incredibly sophisticated ways which I have shown here, Sabrina shows all the time, and beyond. Once again the power needed is very low and surely they know that even extremely low signals can be picked up by good enough antenna systems especially with </span><a href='https://spectrum.ieee.org/5g-bytes-massive-mimo-explained'><span>MIMO like 5g</span></a><span>. Sabrina often says “They electrocute you just a little bit”. Where’s the lie? The electro-quasistatic communication scheme treats organs and body cavities as lumped elements of a circuit. </span></p><h3 id='1136'><a href='https://youtu.be/AUImLcTuRQw?si=oiwmry9Ftxdlc_Od&amp;t=696'><span>11:36</span></a><span> </span></h3><blockquote><p><em><strong><span>Sabrina:</span></strong></em><span> You have a biochemical body part. Internet of behaviors, bodies and things. They took away this </span><strong><span>biofield</span></strong><span> from everybody.</span></p></blockquote><blockquote><p><em><strong><span>Raynard</span></strong></em><span> , </span><em><strong><span>M C Toon</span></strong></em><span> ,and </span><em><strong><span>Chris:</span></strong></em><span> The &#39;aura&#39; was taken away from people? How was that - linked into the secret cabal of engineers? </span></p></blockquote><p><span>At this point there are two questions: 1. Is the biofield real? and 2. Who are &quot;they&quot; - who, how, when, and in what context would the technology be getting into groups of people or everyone? </span></p><ol start='' ><li><p><strong><span>The biofield</span></strong></p></li></ol><p><span>This is where context would be extremely helpful in Sabrina&#39;s work because she does call out specific groups and who may have access to and actively using this technology on people. There are some possibilities</span></p><ul><li><p><a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8981232/'><span>Biofield Frequency Bands—Definitions and Group Differences</span></a><span> </span></p></li></ul><p><span>This paper is reference a lot by Sabrina. I am also very happy that the NIH has this up on the site. It discusses the various frequency bands of the body associated with a myriad of processes in the body. You may ask where&#39;s the aura? It is simply all the electrical processes of the body with neurotransmitters, hormones, nerves, DNA, low to high frequency, each center of your chakras or aura have functions in the body. </span></p><p><span>It may seem dumb to western thinkers but in terms of the physical processes that energetically generate emotions it makes a lot of sense. Ever heard the expressions &quot;stop thinking with your lower member&quot;, &quot;You have too big a heart&quot;, &quot;You think too much&quot;, &quot;Your head is in the clouds&quot;, &quot;think before you speak.&quot; To me these speak of the &quot;imbalance&quot; some have in their chakras, but more concretely, their physical, psychological and emotional state. </span></p><p><span>I understand scientists have scoffed at this idea for a long time, but as Sabrina has stated in her recent videos it is nothing more than the bioelectric processes and electromagnetism in the body which have an incredible amount of medical potential to revolutionize medicine. So maybe people should start understanding how incredibly deep this subject goes before laughing. Here are just a few aspects to energy medicine and bioengineering:</span></p><ul><li><p><span>Heart rate variability</span></p></li><li><p><span>Tunable high power microwave doses for exact destruction of bacteria and viruses</span></p></li><li><p><span>Optogenetics which is a huge area of mind blowing research</span></p></li><li><p><span>Skin resistance networks of the body which can modulate immune and metabolic responses.</span></p></li></ul><p><span>This is just a tiny amount of what can be done. Not to mention all the incredible things that could be done in a positive way with biodigital convergence. In my opinion this need to slow down and I would definitely trust it yet. </span></p><ol start='2' ><li><p><strong><span>Who are &#39;they&#39;</span></strong></p></li></ol><p><span>The YouTube speakers are not wrong in that Sabrina is not usually very clear about who they are that use the communication systems to log in and do whatever they want with the sensors. She does say that it is people who have access to special access programs, people who have signed NDA&#39;s, people who have been given this technology for purposes of gangstalkiing, occultists who use it for deeper purposes of the concept around the &quot;Nephalim&quot;, and people who have access within the medical community. This of course is the $1M dollar question as they say, who has access?</span></p><h3 id='1310'><a href='https://youtu.be/AUImLcTuRQw?si=DZYIOClRplcL-n_J&amp;t=790'><span>13:10</span></a></h3><blockquote><p><em><strong><span>Sabrina:</span></strong></em><span> Then they got busy electrically logging in and out of humans. They use the EEG you know how the ultrasound and MRI are only supposed to be in the hospital? Na  2007 Georgetown. They watch you think, breathe and all the rest.</span></p></blockquote><blockquote><p><em><strong><span>Raynard</span></strong></em><span>,  </span><em><strong><span>M C Toon</span></strong></em><span> Hold on these things need electrodes they don&#39;t work at a distance. How much bandwidth would we need to fully immerse oneself in experience of another. Audio and video. </span><em><strong><span>M C Toon</span></strong></em><span> and </span><em><strong><span>Chris:</span></strong></em><span> PET needs a consumable and an MRI needs heavy magnets. “To actually get the quantum states of every particle in the human brain” is just too much.</span></p></blockquote><ul><li><p><a href='https://youtu.be/cTtIPBPSv0U?si=kzoHoVR4OfxvOj8z'><span>Dr. Charles Morgan on Psycho-Neurobiology and War</span></a></p></li></ul><p><span>This video is so mind blowing. It is just a taste of how far science has come in hacking humans. I can think of quite a few sci-fi movies that what he brings out in this presentation, movie premises have been based upon. Maybe instead of making fun of Sabrina they should ask the ex-CIA guy about logging into peoples bodies, hive minds, memory manipulation and the myriad of wild stuff he shows in that video. </span></p><h3 id='1408'><a href='https://youtu.be/AUImLcTuRQw?si=2zI8B52B9_pmGVdF&amp;t=848'><span>14:08</span></a><span> </span></h3><blockquote><p><em><strong><span>Chris:</span></strong></em><span>  “She actually talking about the thoughts going all the way down to the quantum level and to actually get the quantum states of every electron in the human brain… that&#39;s just no...” </span></p></blockquote><p><span>Sabrina has mentioned quantum technologies before. In the Dr. Morgan video you can see that it doesn&#39;t take this level of control to be able to read audio and video as M C Toon mentioned which is quantifiable. Sabrina points out all the time that the stated goal of DARPA&#39;s </span><a href='https://www.darpa.mil/program/next-generation-nonsurgical-neurotechnology'><span>N3 project</span></a><span> is </span><strong><span>read and write</span></strong><span> to the brain. People within NTRL, NASA, and the military have been researching ways to make cyborgs and upload consciousness for a long time:</span></p><ul><li><p><a href='https://ntrl.ntis.gov/NTRL/dashboard/searchResults/titleDetail/N6515187.xhtml'><span>Engineering Man for Space. The Cyborg Study, Final Report.</span></a></p></li></ul><p><span>Engineering Man for Space. The Cyborg Study, Final Report. In 1963 the thinking was that the only reasonable way to have humans in space without dying is to make them into cyborgs. </span></p><h3 id='1457'><a href='https://youtu.be/AUImLcTuRQw?si=exofbEnYq5KZ0Rhp&amp;t=897'><span>14:57</span></a></h3><blockquote><p><em><strong><span>M C Toon</span></strong></em><span> and </span><em><strong><span>Chris:</span></strong></em><span> “Need an MRI and heavy magnets. I have never been scanned by an MRI without my knowledge”  </span></p></blockquote><p><span>I thought so too just until recently when I found out about </span><a href='https://hackernoon.com/openwater-a-revolutionary-open-source-wearable-mri-and-bci-device'><span>fNIR</span></a><span>. This technology is so revolutionary it is a wearable, portable MRI with higher resolution than an fMRI. This technology is mentioned in a mind blowing patent which I call the </span><em><span>&quot;West World&quot;</span></em><span>  patent:</span></p><ul><li><p><a href='https://www.freepatentsonline.com/11716444.pdf'><span>West World patent</span></a><span> </span></p></li></ul><p><span>Sabrina was so shocked she mentioned that she tried to debunk it for 4 hours but couldn&#39;t. It shows how extremely detailed bodily monitoring systems could be worn for a given period of time - long enough for AI and other algorithms to determine a persons consciousness. This patent has been covered by Sabrina and describes using fNIR or other methods to learn about your physiology to the point at which you can merge with a robot completely. Pretty fun stuff. Was it written by some nutjob? No Mr. Kurtis works at:</span></p><ul><li><p><a href='https://en.wikipedia.org/wiki/Army_Network_Enterprise_Technology_Command'><span>Army Network Enterprise Technology Command</span></a></p></li></ul><p><span>Mr. Kurtis could probably run circles around you guys including me. I would venture to guess he has wetware installed in his brain or uses a non-invasive brain machine interface (BMI) all the time maybe you should ask Dennis Bushnell NASA’s ex-futurist: </span></p><ul><li><p><a href='https://youtu.be/bgLC3MUVSLI?si=INgsyidE64a18bfQ'><span>Dennis Bushnell of NASA 2018</span></a></p></li></ul><p><span>He claims at the time of the recording 100,000 people have chips in their brains. He also claims the pentagon informed him there would soon be 100 trillion sensors everywhere. So let me pause here, you guys are missing a huge central thesis of Sabrina’s videos. The Global information Grid (GIG) is a digital twin network of vast amounts of data and the military doctrine hinges on net centric warfare. Instead of blasting you with links on all that, I leave that as an exercise for the reader / viewer. </span></p><h3 id='1710'><a href='https://youtu.be/AUImLcTuRQw?si=vGg9ETYKS6WhLXqR&amp;t=1031'><span>17:10</span></a><span> </span></h3><blockquote><p><em><strong><span>M C Toon:</span></strong></em><span> She managed dialup CISCO dialup gear. This is not very impressive. None of her background suggests she has a high level security background.</span></p></blockquote><p><span>She claims she gets some of her information from her parents who were supposedly connected to the N2 DARPA project and more. I don&#39;t really care about her background honestly. The personal attacks on her background are pointless and weak. If someone like Sabrina brings forward  information from first hand sources then I would pay attention to those and try to see which statements she is making make sense.  </span></p><p><span>You guys also haven’t tried debunking her </span><em><span>“tech pdf”</span></em><span> She has made a large list of links supporting everything she is claiming. Admittedly there are a lot of holes and unknowns, but this just highlights how lame you guys are at trying to debunk her! You act like you cannot read the papers and information she is bringing to the table yourselves.  Clearly she has been researching a lot on her own, and refining her message since her new videos are a lot more clear. The community she calls the &quot;Psinergists&quot; and been teaching her probably as much as she has been teaching them. </span></p><h3 id='2029'><a href='https://youtu.be/AUImLcTuRQw?si=O58zCL06-ueDshKa&amp;t=1169'><span>20:29</span></a></h3><blockquote><p><em><strong><span>Sabrina:</span></strong></em><span> We have a bunch of electrical engineers who are now your doctors... Wireless drugging already happening.</span></p></blockquote><blockquote><p><em><strong><span>M C Toon:</span></strong></em><span> “She is suggesting that somehow these devices that nobody knows about have been implanted in people - that they are drugged by these devices.” </span><em><strong><span>Chris:</span></strong></em><span> There are larger scale machines that do this.  </span><em><strong><span>M C Toon:</span></strong></em><span> Sure but not at such a small scale and wirelessly.</span></p></blockquote><p><span>Please refer to Dr. Charles Morgan’s video on this. How about I make it even more scary for you:</span></p><ul><li><p><a href='https://www.technologyreview.com/2013/07/16/177343/how-smart-dust-could-spy-on-your-brain/'><span>How smart dust could spy on your brain</span></a></p></li></ul><p><span>So Morgan describes how the synthetic biology can make drugs and that this can be done wirelessly and Giodorno describes the scenario of weaponized nano-particulate drugging. Do I literally think this is happening to make some dystopian society of drones? No. I think Sabrina has been traumatized by covert tests because I think that not every single person in the “targeted individual” community is crazy. Ever heard of the Havana syndrome? Grow up and face the reality of covert 5th generational warfare. Dr. Morgan describes being able to make a personalized bioweapon tuned to your specific DNA that could be covertly delivered using synthetic biology. Try to debunk the ex-CIA guy!</span></p><h3 id='2210'><a href='https://youtu.be/AUImLcTuRQw?si=4_TOXlQubDgySkpw&amp;t=1330'><span>22:10</span></a></h3><blockquote><p><em><strong><span>Sabrina:</span></strong></em><span> These techniques are commercially available. First zigbee and bluetooth since 2005. </span></p></blockquote><blockquote><p><em><strong><span>Raynard:</span></strong></em><span> So there you go, </span><em><strong><span>M C Toon:</span></strong></em><span> and nobody told you. </span><em><strong><span>Chris:</span></strong></em><span> We know about them because they are published on the internet.</span></p></blockquote><p><span>Obviously people know about Bluetooth and Zigbee, but at the this time, Sabrina was referring to here thesis that Zigbee actually followed the bioenergy nodes on the body - given that she talks about being experimented on as a child in the manner with electrodes placed all over her body. </span></p><p><img src="C:\Users\werty\Documents\BD convergence\Typora Notes\Mind of Steele Debunked\ieee802-15 logo.jpg" referrerpolicy="no-referrer"></p><p><span>Sabrina liked to point out this striking image from the </span><a href='https://grouper.ieee.org/groups/802/15/member_status.html'><span>IEEE 802.15 working group</span></a><span> back when it was being decided. I am not convinced of this but since the decisions involve devices around, on or in the body it makes sense she would see it this way. </span></p><h3 id='2606'><a href='https://youtu.be/AUImLcTuRQw?si=_St_K0HRdXhT1Phf&amp;t=1526'><span>26:06</span></a><span> </span></h3><blockquote><p><em><strong><span>Sabrina:</span></strong></em><span> Looking glass is something other than RF neuromodulation . For individual organs or nano peer to peer brain to brain is 802.15.5 </span><em><strong><span>YouTubers:</span></strong></em><span> laugh about this and continue to make fun of her</span></p></blockquote><p><span>This standard. the .5 doesn&#39;t appear to be right. What about this one though? </span><a href='https://ieeexplore.ieee.org/document/8247001'><span>Nanocommunications as a new source of data</span></a><span> IEEE 1906.1. looks like a standard for exactly what Sabrina is talking about. Haha so funny that DARPA is researching this. Funny how Dr. Morgan talked about remote sensing of another persons arm, or hive mind experiments on rats, or all the other wild stuff he was presenting. We’re not in th 1950s where these were all just silly scifi dreams. They are becoming a reality. So ask the deeper questions. How pervasive is this? Why aren’t people questioning the dual-use potential of graphene biosensors and the myriad of others?</span></p><h3 id='2627'><a href='https://youtu.be/AUImLcTuRQw?si=AG1aqpHo6GLS-Z0k&amp;t=1587'><span>26:27</span></a></h3><blockquote><p><em><strong><span>M C Toon:</span></strong></em><span> “So it’s not the device it’s the actual organ now?” </span></p></blockquote><p><span>Yes it’s called tissue engineering. It’s also not just stem cells that Dr. Morgan described it could be xenobots, bacteria, there are so many possibilities here. It could be targeted viruses which is all over the optogenetic research. There are CMOS molecular chips and protein based transistors. The biodigital convergence is a massive effort. </span></p><ul><li><p><a href='https://www.researchgate.net/publication/383831177_AI-powered_Human-on-Chip_Redefining_Biomedical_Frontiers_Human-on-Chip'><span>AI-powered Human-on-Chip: Redefining Biomedical Frontiers</span></a><span>  </span></p></li></ul><p><img src="C:\Users\werty\Documents\BD convergence\Typora Notes\Mind of Steele Debunked\Human on a chip.png" referrerpolicy="no-referrer"></p><p><span>This paper describes an incredible amount of chip technologies that have been developed for nearly all the major organs. It describes being able to make communication networks between them and the abilities of AI technology to make use of these data streams to develop amazing health care possibilities. Sounds great if we could trust our broken healthcare system.</span></p><h3 id='2652'><span>26:52 </span></h3><blockquote><p><em><strong><span>The YouTubers:</span></strong></em><span> “Every burp and fart” </span></p></blockquote><p><span>Your moronic jokes just illustrative your non-inquisitive attitudes Why study the microbiome? Why categorize 316 million gene of the microbiome as seen in the IEC slides and report? I am not saying they do this in some covert way by the WBAN sensors if they are even in everyone, however when considering the experimental possibilities of doing such a thing and making a digital twin to track the detailed biological life of human is something I would not put past a government to do. Seriously! Who know the extent of DHS and other organizations to monitor diseases using the WBAN. Can you prove this? Probably not especially if it is nano-scale. </span></p><ul><li><p><span>If people mention Dr. Ardis or other people seeing mirco-size, man-made particles in the vaccines or blood be cautious! Although there is a lot to the study of venomics be wary of slick salesmen and counter intelligence. Here again I can’t prove he is but DNI is clear that these subjects are a part of their counter-intelligence strategy </span></p></li><li><p><a href='https://www.dni.gov/files/NCSC/documents/features/20200205-National_CI_Strategy_2020_2022.pdf'><span>DNI - National Counterintelligence Strategy</span></a></p></li></ul><ul><li><p><a href='https://www.dhs.gov/archive/national-biosurveillance-integration-center'><span>DHS Biosurveillance</span></a></p></li></ul><h3 id='2652-2'><a href='https://youtu.be/AUImLcTuRQw?si=BTRmFu0TX51nmcjh&amp;t=1612'><span>26:52</span></a><span> </span></h3><blockquote><p><em><strong><span>M C Toon:</span></strong></em><span> “Again its not even wideband”</span></p></blockquote><ul><li><p><a href='https://www.matjournals.co.in/index.php/JORSGT/article/view/1297'><span>Wireless Complete Body Scanning System based on GSM Technology and RF Waves</span></a></p></li></ul><p><span>This article describes ultrawideband in the WBAN. There are unlicensed ultrawideband options. They then start making fart jokes about the sensor measuring how much gas is passed. </span></p><ul><li><p><a href='https://www.popularmechanics.com/science/a35540819/what-is-synthetic-beef-bill-gates-lab-grown-meat/'><span>What is synthetic beef?</span></a></p></li></ul><p><span>Maybe you guys can eat some 100% synthetic meat and sniff your pompous farts. </span></p><h3 id='2806'><a href='https://youtu.be/AUImLcTuRQw?si=ozjir2uC8eYTcdW0&amp;t=1686'><span>28:06</span></a><span> </span></h3><blockquote><p><em><strong><span>Sabrina:</span></strong></em><span> Metamaterials in the 6g LoPan and the THz. That means if you don&#39;t know this is a body part you&#39;ll be electrocuted into submission by soft kill weaponry because the SMART grid is weaponry.</span></p></blockquote><p><span>Ok guys, this is just such an incredible rabbit-hole, I could go on for days since I actually worked for a defense contractor helping build systems that could knock out drones with high power microwaves (my statements are my own and do not reflect any of my previous job, or schools views). Let’s just stick to one clear soft kill mechanism I want to highlight. Metamaterials can absorb microwave energy at nearly 100% depending on the incidence angle, frequency,and other factors, but let&#39;s talk about graphene. Referring the article I shared earlier, if graphene can absorb and locally heat a tiny area in the body, it can potentially ionize, or even damage cells. You would say </span><strong><span>no</span></strong><span> you can&#39;t ionize with 5g, meta-studies have shown it’s safe. Yes on normal tissue with normal levels of radiation. Calculate the flux of electromagnetic waves when being absorbed onto a micro-scale graphene particle you would find it is very high locally to the particle and any surrounding cells. The electron transfer to other particles and cells could occur. Electrophoresis and sonophoresis are also possibilities which means the high electric field and sound waves can open up pathways into the cell. This is what is called athermal effects that give the body undue levels of stress. Soft kill refers to stressing someone till they literally die. </span></p><ul><li><p><a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9778992/'><span>Controversy in Electromagnetic Safety</span></a></p></li></ul><p><span>So much of the safety literature ignores the idea that graphene or other types of junk could be within the body even when discussing the EMF athermal effects. This would make things worse especially if they are resonant with the incoming RF just as I showed earlier. </span></p><h3 id='3544'><a href='https://youtu.be/AUImLcTuRQw?si=y7A_aO-zVw6fe4oz&amp;t=2079'><span>35:44</span></a><span> </span></h3><blockquote><p><em><strong><span>Sabrina:</span></strong></em><span> Most people when confronted with idea that &quot;Their ass is attached to the cloud&quot; cannot face this and respond with someone would have told us.</span></p></blockquote><blockquote><p><em><strong><span>M C Toon:</span></strong></em><span> “No someone would&#39;ve noticed when it was installed.&quot; </span><em><strong><span>Raynard:</span></strong></em><span> &quot;Whenever Sabrina or Mark Steele are talking about this  - What would be the reason for doing this why would anyone actually want to catalogue every single breathe...&quot;</span></p></blockquote><p><span>Sabrina says all the time that people would be upset if they knew that they were attached to the cloud. I agree with the sentiment and I am upset too, but am not certain that I am attached to the cloud. This points to an interesting point of todays psychology. Knowing we are being recorded to by our phones, and TV&#39;s and we are being watched by the NSA constantly people seem not to care. It builds a learn helplessness (Stockholm syndrome) in people because we cannot stop them by complaining about it. &quot;What do you have to hide right?&quot; What a crappy question. We have to demand privacy</span></p><p><span>This question of </span><strong><span>why collect body signals</span></strong><span> is a good question. Why would the military use MEMS for? Why release 100 trillion sensors to monitor everything? The concept of digital twins is very old but is incredibly powerful the sentient world simulation was partly run with people from the fortune 500. To me it seems like the GIG is the best kept secret of the western 5I’s. If information can about EVERYTHING AT ALL TIMES can be recorded, gee, I wonder what you could do with that information in markets and in controlling populations, crime, etc… Don’t be so naïve gentlemen, start asking tougher questions. </span><strong><span>In the context of the GIG it&#39;s for total informational awareness for their netcentric warfare in the context of the fortune 500 it is to sell us on all idea of the 4th industrial revolution</span></strong><span> - the technology that will be sold to us for and within the body. You might want to see what Sabrina says about this in more detail. I will leave this for another time to answer in more detail. </span></p><hr /><p><span>10/4/24 - Notes on the video editing</span></p><ul><li><p><span>Was able to edit up to the 4:42:03 mark</span></p></li></ul></div></div>
+</body>
+</html>
