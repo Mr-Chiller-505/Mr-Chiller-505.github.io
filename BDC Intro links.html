@@ -342,38 +342,37 @@ mjx-container { break-inside: avoid; }
 @import "";
 
 :root {
-    --of-theme-color: #ff9100;
-    --of-theme-color-dark: #4b4b46;
-    --of-darkest-color: #2d2d2d;
-    --of-darker-color: #1e1e1e;
-    --of-dark-color: #292929;
-    --of-dark-color2: #202020;
-    --of-dark-color3:#404040;
-    --of-dark-color4:#232323;
-    --of-dark-color5:#222222;
-    --of-dark-color6:#1b1b1b;
+    --of-theme-color: #4a89dc;
+    --of-theme-color-dark: #2a3139;
+    /* --of-theme-color-dark: #2a3932; */
+    
+    --of-darkest-color: #101113;
+    --of-darker-color: #15171a;
+    --of-dark-color: #21252b;
+    --of-dark-color2: #1c1e21;
     --of-strong: white;
-    --of-strong-code: #00ffa6;
-    --of-font-size: 15px; /*字体大小*/
+    --of-strong-code: #ff795e;
+    --of-font-size: 16.5px; /*字体大小*/
     --of-selection: #4a89dc;
     --of-selection-text: white;
-    --of-text-color: #c6c5b8;
+    --of-link-color: #4a89dc;
 
     --bg-color: var(--of-darker-color);
+    --bg-color-megamenu: #15171a;
     /* 侧边栏颜色 */
     --side-bar-bg-color: var(--of-darkest-color);
-    --text-color: var(--of-text-color);
+    --text-color: white;
     /* 这才是文字颜色 */
-    --text-color-main: var(--of-text-color);
+    --text-color-main: white;
     /* 选中文字的颜色 */
-    --select-text-bg-color: var(--of-theme-color-dark);
+    --select-text-bg-color: var(--of-selection);
     /* 被激活的目录背景 */
-    --item-hover-bg-color: var(--of-dark-color3);
+    --item-hover-bg-color:  var(--of-dark-color);
     --control-text-color: #b7b7b7;
     --control-text-hover-color: #fff;
     --window-border: 1px solid #333;
     /* 被激活的文件背景 */
-    --active-file-bg-color: var(--of-dark-color4);
+    --active-file-bg-color: var(--of-dark-color);
     --active-file-border-color: var(--of-theme-color);
     --primary-color: var(--of-theme-color);
     --active-file-text-color: #fff;
@@ -386,9 +385,9 @@ mjx-container { break-inside: avoid; }
     /* --code-bg-color: #31302e; */
     --footer-bg-color: var(--side-bar-bg-color);
     --table-bg-darker-color:   var(--of-dark-color2);
-    --table-bg-color:   var(--of-dark-color5);
+    --table-bg-color:   var(--of-dark-color);
     --table-bg-color2:   var(--of-darkest-color);
-    --table-thead-color: var(--of-dark-color6);
+    --table-thead-color: var(--of-darkest-color);
     --md-code-color: var(--of-strong-code);
     --table-edit-color: var(--of-darkest-color);
     --task-list-border-color: #ffffff;
@@ -422,8 +421,6 @@ mjx-container { break-inside: avoid; }
     --back-btn-color: var(--of-theme-color);
     /* 高亮文字颜色 */
     --highlight-text-color: var(--of-darker-color);
-    /* 距离底部 */
-    --write-padding-bottom: 400px;
 
     --ofcodetext: Inconsolata, Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
     --oftext: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -432,7 +429,7 @@ mjx-container { break-inside: avoid; }
     --title-font: var(--oftext); /*标题字体*/
     --text-line-height: 1.7; /*正文行间距*/
     --code-line-height: 1.6; /*代码块行间距*/
-    --p-spacing: 0.8rem; /*段间距*/
+    --p-spacing: 1.5rem; /*段间距*/
 
 }
 
@@ -447,14 +444,37 @@ html,
 body {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    background: var(--bg-color);
+    /* background: var(--bg-color); */
+    background: 
+    linear-gradient(
+        to top,
+        rgba(0,0,0,0) 0%,
+        var(--bg-color) 100%
+    ),
+    radial-gradient(
+        circle at 50% 100%,
+        var(--of-theme-color-dark) 0%,
+        black 100%
+    );
+    background-attachment: fixed;
     fill: currentColor;
     line-height: var(--text-line-height);
 }
 
+#megamenu-content {
+    background-image:  url(file:///C://Users//CaseyRodgers//AppData//Roaming//Typora/themes/obscurefreeman/background/chernobyl2.png);
+    background-repeat: repeat;
+    background-position: right;
+    background-size: cover;
+}
+
+
 #write {
     max-width: 914px;
-    padding-bottom: var(--write-padding-bottom);
+
+    /* background: none;
+
+    min-height: calc(100% - 48px); */
 }
 
 
@@ -481,6 +501,11 @@ div.code-tooltip-content {
     color: var(--text-color-main);
     border-color: transparent;
 }
+
+/* .code-tooltip input {
+    background: none;
+    backdrop-filter: saturate(120%) blur(20px) brightness(0.85);
+} */
 
 div.code-tooltip,
 .md-hover-tip .md-arrow:after {
@@ -531,8 +556,7 @@ h1 {
     font-size: 2.5rem;
     margin-bottom: var(--p-spacing);
     letter-spacing: -1.5px;
-    padding-bottom: 0.2rem;
-    border-bottom: 1px solid #383838;
+    /* border-bottom: 1px solid #383838; */
     margin-top: 1em;
 }
 
@@ -571,13 +595,6 @@ img {
     border-radius: 8px;
     border-left: none !important;
     border-right: none !important;
-    max-width: 60%;
-}
-
-@media (max-width: 800px) {
-    img {
-        max-width: 100%;
-    }
 }
 
 @media (min-width: 980px) {
@@ -655,7 +672,7 @@ iframe,
 .wp-audio-shortcode,
 .wp-video-shortcode {
     margin-top: 0;
-    margin-bottom: var(--p-spacing);
+    margin-bottom: 1.5rem;
     /* 24px */
 }
 
@@ -717,28 +734,14 @@ cite {
 }
 
 blockquote {
-    padding: 20px;
-    position: relative;
-    border-radius: 8px;
-    border: 1px solid var(--primary-color);
-    /* background-color: var(--background-color); */
-    box-shadow: 0 2 px4px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    line-height: 1.5;
-    /* color: var(--text-color); */
-    color: white
-}
-
-blockquote::before {
-    content: "";
-    position: absolute;
-    top: -8px;
-    left: -8px;
-    width: 16px;
-    height: 16px;
-    border-radius: 5px;
-    background-color: var(--primary-color);
-    transform: rotate(45deg);
+    /* padding-left: 1.875rem; */
+    margin: 2em 0;
+    border-left: solid 5px var(--other-main-color);
+    padding: 1.5em;
+    /* background: var(--blockquote-color); */
+    color: white;
+    background: none;
+    backdrop-filter: saturate(120%) blur(20px) brightness(0.85);
 }
 
 pre,
@@ -755,6 +758,7 @@ tt,
 var {
     background: rgba(255, 255, 255, 0.05);
     color: var(--md-code-color);
+    /* box-shadow: 0 0 2px var(--md-code-color); */
     border-radius: 0.2rem;
 }
 
@@ -777,13 +781,15 @@ pre.md-fences {
     padding: 0.5rem !important;
     border-radius: 8px;
     word-wrap: normal;
-    background-color: var(--code-bg-color);
+    background:none;
+    /* background-color: var(--code-bg-color); */
     border: none;
     font-family: var(--ofcodetext);
+    backdrop-filter: saturate(120%) blur(20px) brightness(0.85);
 }
 
 .CodeMirror-gutters {
-    background: var(--code-bg-color);
+    background: none;
     border-right: 1px solid transparent;
 }
 
@@ -806,6 +812,8 @@ table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
+    background: none;
+    backdrop-filter: saturate(120%) blur(20px) brightness(0.85);
 }
 
 th,
@@ -826,7 +834,7 @@ hr {
 }
 
 a {
-    color: var(--primary-color);
+    color: var(--of-link-color);
     text-decoration: underline;
 }
 
@@ -842,6 +850,7 @@ a:hover {
 
 mark {
     background: var(--other-main-color);
+    /* color: white; */
     color: var(--highlight-text-color);
     padding: 0.2rem 0.4rem;
     border-radius: 0.2rem;
@@ -900,13 +909,6 @@ table tr td:last-child {
     margin-bottom: 0;
 }
 
-table img {
-    border-radius: 8px;
-    border-left: none !important;
-    border-right: none !important;
-    max-width: 100%;
-}
-
 /* th,
 td {
     border: solid 1px #544e47;
@@ -914,21 +916,21 @@ td {
 
 
 /* 设置表格头部行的样式 */
-th,
+/* th,
 
 th {
     background-color: var(--table-thead-color);
-}
+} */
 
 /* 设置奇偶行的背景颜色 */
 
-tr:nth-child(2n) {
+/* tr:nth-child(2n) {
     background-color: var(--table-bg-darker-color);
 }
 
 tr:nth-child(2n + 1) {
     background-color: var(--table-bg-color);
-}
+} */
 
 .task-list {
     padding-left: 0;
@@ -997,7 +999,7 @@ tr:nth-child(2n + 1) {
 }
 
 .typora-quick-open-item:hover {
-    background-color:  var(--of-theme-color-dark);
+    background-color:  var(--select-background);
 }
 
 .typora-search-spinner > div {
@@ -1017,7 +1019,8 @@ tr:nth-child(2n + 1) {
     padding: 1rem;
     border-radius: 8px;
     line-height: 1.45;
-    background: transparent;
+    background: none;
+    backdrop-filter: saturate(120%) blur(20px) brightness(0.85);
     font-family: var(--ofcodetext);
 }
 
@@ -1098,6 +1101,8 @@ tr:nth-child(2n + 1) {
     box-shadow: none;
     border-right: 1px dashed;
     border-right: none;
+    background: none;
+    backdrop-filter: saturate(120%) blur(20px) brightness(0.85);
 }
 
 .sidebar-tabs {
@@ -1178,7 +1183,8 @@ h6.md-focus .md-attr,
 }
 
 .md-table-resize-popover {
-    background-color: var(--code-bg-color);
+    background: none;
+    backdrop-filter: saturate(120%) blur(20px) brightness(0.85);
 }
 
 .form-inline .input-group .input-group-addon {
@@ -1192,9 +1198,11 @@ h6.md-focus .md-attr,
 /* 右键菜单和字数统计 */
 
 .context-menu,
-#spell-check-panel,
-#footer-word-count-info {
-    background-color:  var(--context-menu-color);
+#footer-word-count-info,
+#spell-check-panel {
+    backdrop-filter: saturate(120%) blur(20px) brightness(0.85);
+    background: none;
+    border-radius: 8px;
 }
 
 .context-menu.dropdown-menu .divider,
@@ -1209,7 +1217,6 @@ footer {
     backdrop-filter: saturate(120%) blur(20px) brightness(0.85);
     border: none !important;
     background: none;
-    background-color: var(--footer-bg-color);
 }
 /* footer {
     color: inherit;
@@ -1231,7 +1238,7 @@ footer {
 
 .megamenu-content,
 .megamenu-opened header {
-    background: var(--bg-color);
+    background: var(--bg-color-megamenu);
 }
 
 .megamenu-menu-panel h2,
@@ -1242,11 +1249,16 @@ footer {
 .long-btn {
     margin-bottom: 12px;
     margin-left: 2px;
-    background-color: var(--of-darkest-color);
+    background: none;
     border: 1px solid #383838;
     border-radius: 0.3rem;
     padding: 1rem;
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    backdrop-filter: saturate(120%) blur(20px) brightness(0.85);
+}
+
+.long-btn:active {
+    animation: buttonClickAnimation 0.3s;
 }
 
 .long-btn:hover {
@@ -1264,29 +1276,26 @@ footer {
     border-bottom: 1px solid;
 }
 
-#recent-document-table {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-}
-
 #recent-file-panel {
     padding: 10px;
-}
+  }
 
 #recent-file-panel-action-btn {
     background: inherit;
     border: 1px grey solid;
 }
 
-#recent-file-panel thead tr {
-    background-color: var(--table-thead-color);
+#recent-file-panel tbody {
+    background: none;
+    backdrop-filter: saturate(120%) blur(20px) brightness(0.85);
 }
 
 #recent-file-panel tbody tr:nth-child(2n) {
-    background-color: var(--table-bg-darker-color);
+    background: none;
 }
 
 #recent-file-panel tbody tr:nth-child(2n + 1) {
-    background-color: var(--table-bg-color);
+    background: none;
 }
 
 
@@ -1332,7 +1341,9 @@ footer {
     background-color: rgb(0, 0, 0);
 } */
 .megamenu-menu {
-    background-color: var(--side-bar-bg-color);
+    /* background-color: var(--side-bar-bg-color); */
+    background: none;
+    backdrop-filter: saturate(120%) blur(20px) brightness(0.85);
 }
 
 
@@ -1342,20 +1353,20 @@ footer {
 .btn-primary {
     border: none;
     border-radius: 0.3rem;
-    background-color: var(--other-main-color);
+    border: 1px solid var(--other-main-color) !important;
     color: white !important;
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
     color: white;
-    background-color: var(--of-theme-color-dark) !important;
+    background-color: var(--other-main-color) !important;
 }
 
 .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default {
-    /* color: white;
-    border: 1px solid #ddd; */
-    background-color: var(--of-theme-color-dark);
+    color: white;
+    border: 1px solid #ddd;
+    background-color: inherit;
 }
 
 .modal-header {
@@ -1531,14 +1542,20 @@ footer {
     color: var(--tooltip-text-color);
 }
 
-/* 右键菜单按下 */
-.menu-item-container:hover {
+/* 右键菜单按下（暂时不用） */
+/* .menu-item-container:hover {
     background-color: var(--menu-item-container-btn-hover);
-}
+} */
+
+/* .menu-item-container:active {
+    animation: buttonClickAnimation 0.3s;
+} */
+
 
 /* 右键菜单按钮 */
 .menu-item-container a.menu-style-btn {
     /* background: var(--menu-item-container-btn); */
+    background: none;
     border: 1px solid;
     border-color: var(--menu-item-container-btn);
     border-radius: 5px;
@@ -1558,8 +1575,6 @@ footer {
 footer.ty-footer {
     border-color: var(--select-background);
 }
-
-/* 偏好 */
 
 .ty-preferences .btn-default {
     background: transparent;
@@ -1689,11 +1704,30 @@ footer.ty-footer {
 }
 
 
+
+/* .outline-item:active, */
+/* .has-extra-menu:active, */
+a:active,
+.info-panel-tab-title:active {
+    animation: buttonClickAnimation 0.3s;
+}
+
+@keyframes buttonClickAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
 </style><title>BDC Intro links</title>
 </head>
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><p><span>Biodigital Convergence: An introduction – Links</span></p><p><span>Casey Rodgers, 09/2024</span></p><p><span>Videos</span></p><p><span>·     </span><a href='https://rumble.com/v5gke7l-330156273.html'><span>Nanonetworking in the Terahertz Band (and Beyond): From Nanomaterials to Macrosystems UN-LAB Joseph Jornet 6G</span></a></p><p><span>·     </span><a href='https://www.youtube.com/watch?si=kHzafq7LzcQ19XCl&amp;v=LX6r-t6KwU4&amp;feature=youtu.be'><span>Hacking Humans</span></a></p><p><span>·     </span><a href='https://www.youtube.com/watch?v=QuL3wlodJC8'><span>Harari Transhumanism and eliminating free will</span></a><span> </span></p><p><span>·     </span><a href='https://www.youtube.com/watch?v=gG6WnMb9Fho'><span>Harari how to survive the 21st century</span></a></p><p><span>·     </span><a href='https://www.youtube.com/watch?v=VgdyXh4m9Mc'><strong><span>Wave genome – future science</span></strong></a><span> </span><strong><span>– Must see absolutely mind blowing</span></strong></p><p><span>·     </span><a href='https://www.youtube.com/channel/UCl3Vf8heuOumLuC_toRYGXg'><span>H+ mini-series – very creepy</span></a></p><p><span>·     </span><a href='https://www.youtube.com/watch?v=C5UUc9qM_8A'><span>Giordano – Neuro-weaponry</span></a><span> </span></p><p><span>·     </span><a href='https://youtu.be/bgLC3MUVSLI?si=H4BLbV1OF48WLXR1'><span>Dennis Bushnell of NASA, 2018 speech</span></a></p><p><span>Links to WEF</span></p><p><span>·     </span><a href='https://www.weforum.org/agenda/2023/01/future-of-science-bioconvergence-davos2023/'><span>Does the future of science lie in ‘</span></a><a href='https://www.weforum.org/agenda/2023/01/future-of-science-bioconvergence-davos2023/'><span>bioconvergence</span></a><a href='https://www.weforum.org/agenda/2023/01/future-of-science-bioconvergence-davos2023/'><span>’?</span></a></p><p><span>·     </span><a href='https://intelligence.weforum.org/topics/a1G0X000006DO7RUAW'><span>Mind map of the 4</span></a><a href='https://intelligence.weforum.org/topics/a1G0X000006DO7RUAW'><span>th</span></a><a href='https://intelligence.weforum.org/topics/a1G0X000006DO7RUAW'><span> industrial revolution and more</span></a></p><p><span>·     </span><a href='https://www3.weforum.org/docs/WEF_IoB_briefing_paper_2020.pdf'><span>WEF on the internet of bodies </span></a></p><p><span>·     </span><a href='https://www.weforum.org/agenda/2021/03/scientists-are-developing-a-digital-twin-of-our-earth-to-fight-climate-change/'><span>Building a digital twin of earth to fight climate change</span></a></p><p><span>·     </span><a href='https://www.weforum.org/agenda/2018/04/transhumanism-advances-in-technology-could-already-put-evolution-into-hyperdrive-but-should-they'><span>Transhumanism could put evolution into hyperdrive</span></a></p><p><span>·     </span><a href='https://www.weforum.org/agenda/2019/06/30-years-since-the-mouse-with-a-human-ear-what-has-been-achieved/'><span>30 years since mouse with human ear what has been achieved</span></a></p><p><span>·     </span><a href='https://www.weforum.org/agenda/2020/06/internet-of-bodies-covid19-recovery-governance-health-data/'><span>Internet of Bodies is here</span></a></p><p><span>·     </span><a href='https://www.wired.com/story/opinion-democracies-can-become-digital-dictators/'><span>Democracies can become digital dictators</span></a></p><p><span>·     </span><a href='https://formerfedsgroup.org/opposing-the-wef/'><span>Opposition to what the WEF is saying</span></a></p><p><span>·     </span><a href='https://www.opendemocracy.net/en/oureconomy/conspiracy-theories-aside-there-something-fishy-about-great-reset/'><span>Conspiracy theories aside, there is something fishy about the Great Reset </span></a></p><p><span>·     Just look at the huge number of corporations and organizations partnering with the WEF: </span><a href='https://www.weforum.org/partners/'><span>Our partners</span></a></p><p><a href='https://www.electrical4u.com/electrical-engineering-articles/circuit-theory' target='_blank' class='url'>https://www.electrical4u.com/electrical-engineering-articles/circuit-theory</a></p><p><span>Electromagnetism</span></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/Classical_electromagnetism' target='_blank' class='url'>https://en.wikipedia.org/wiki/Classical_electromagnetism</a><span> </span></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/Dielectric_heating' target='_blank' class='url'>https://en.wikipedia.org/wiki/Dielectric_heating</a><span> </span></p><p><span>Wavelength and skin depth</span></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/Holography'><span>Holography</span></a></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/5D_optical_data_storage'><span>5D optical data storage</span></a></p><p><span>·     </span><a href='•	https:/www.amazon.com/Holographic-Universe-Revolutionary-Theory-Reality/dp/0062014102'><span>Holographic Universe – Michael Talbot</span></a></p><p><span>Thermodynamics and sound</span></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/Thermal_conductance_and_resistance' target='_blank' class='url'>https://en.wikipedia.org/wiki/Thermal_conductance_and_resistance</a><span> </span></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/Thermoacoustics'><span>Thermoacoustics</span></a></p><p><a href='https://en.wikipedia.org/wiki/Nanotechnology'><span>Nanotechnology</span></a></p><p><span>Fluid dynamics</span></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/Microfluidics'><span>Microfluidic</span></a></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/Fluid_dynamics'><span>Fluid dynamics</span></a></p><p><a href='https://en.wikipedia.org/wiki/Epigenetics'><span>Epigenetics</span></a></p><p><a href='https://en.wikipedia.org/wiki/Human_brain'><span>Human Brain</span></a></p><p><a href='https://www.myndlift.com/post/what-are-brainwaves'><span>Brain Waves</span></a></p><p><a href='https://en.wikipedia.org/wiki/Schumann_resonances'><span>Schumann Resonances</span></a></p><p><a href='https://en.wikipedia.org/wiki/Digital_twin'><span>Digital Twin</span></a></p><p><a href='https://www.iec.ch/system/files/2022-12/day_1_seg_12_webinar_biodigital_convergence_v1.0_0.pdf'><span>IEC </span></a><a href='https://www.iec.ch/system/files/2022-12/day_1_seg_12_webinar_biodigital_convergence_v1.0_0.pdf'><span>biodigital</span></a><a href='https://www.iec.ch/system/files/2022-12/day_1_seg_12_webinar_biodigital_convergence_v1.0_0.pdf'><span> convergence slides</span></a></p><p><span>CRISPR and Beyond</span></p><p><span>·     </span><a href='https://phys.org/news/2020-01-rna-effect-dna.html'><span>mRNA can directly </span></a><a href='https://phys.org/news/2020-01-rna-effect-dna.html'><span>effect</span></a><a href='https://phys.org/news/2020-01-rna-effect-dna.html'><span> </span></a><span>DNA</span></p><p><span>·     Monsanto </span><a href='https://responsibletechnology.org/genetically-modified-corn-study-reveals-health-damage-and-cover-up/'><span>90-day studies</span></a></p><p><span>·     </span><a href='https://www.nature.com/articles/nrg.2015.34'><span>Gene drives </span></a></p><p><span>·     </span><a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2682994/'><span>gmo</span></a><a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2682994/'><span> rice with increased vitamin A</span></a></p><p><a href='https://en.wikipedia.org/wiki/Optogenetics'><span>Optogenetics</span></a></p><p><a href='https://en.wikipedia.org/wiki/Sonophoresis'><span>Sonophoresis</span></a><span> , </span><a href='https://en.wikipedia.org/wiki/Electrophoresis'><span>Electrophoresis</span></a></p><p><a href='https://ieeexplore.ieee.org/document/1036025'><span>EM Induced thermos-acoustics</span></a></p><p><a href='https://en.wikipedia.org/wiki/Bioelectronics'><span>Bioelectronics</span></a><span> , </span><a href='https://www.cambridge.org/core/books/handbook-of-bioelectronics/7128838996BEE31406FEE884521E69B8'><span>Handbook of bioelectronics</span></a></p><p><span>IEEE standards and layers of the internet</span></p><p><span>·     </span><a href='https://electricala2z.com/cloud-computing/osi-model-layers-7-layers-osi-model/' target='_blank' class='url'>https://electricala2z.com/cloud-computing/osi-model-layers-7-layers-osi-model/</a><span> </span></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/Body_area_network' target='_blank' class='url'>https://en.wikipedia.org/wiki/Body_area_network</a><span> </span></p><p><a href='https://en.wikipedia.org/wiki/Electroencephalography'><span>EEG</span></a><span>, </span><a href='https://en.wikipedia.org/wiki/Magnetoencephalography'><span>MEG</span></a><span>, </span><a href='https://en.wikipedia.org/wiki/Electrocardiography'><span>EKG</span></a><span>, </span><a href='https://en.wikipedia.org/wiki/Functional_magnetic_resonance_imaging'><span>fMRI</span></a><span>, </span><a href='https://hackernoon.com/openwater-a-revolutionary-open-source-wearable-mri-and-bci-device'><span>fNIR</span></a></p><p><a href='https://en.wikipedia.org/wiki/Technocracy'><span>Technocracy</span></a><span>, </span><a href='https://en.wikipedia.org/wiki/The_Venus_Project'><span>the Venus Project</span></a></p><p><span>Sentient Analysis and feedback </span><a href='https://en.wikipedia.org/wiki/Government_by_algorithm'><span>algorithmic governance</span></a></p><p><a href='https://en.wikipedia.org/wiki/ECHELON'><span>ECHELON</span></a><span> and </span><a href='https://en.wikipedia.org/wiki/Global_Information_Grid'><span>Global Information Grid </span></a></p><p><a href='https://en.wikipedia.org/wiki/Smart_city'><span>Smart City</span></a></p><p><a href='https://www.dhs.gov/science-and-technology/biosurveillance'><span>Biosurveillance</span></a><span> , </span><a href='https://www.researchgate.net/publication/343250221_PANACEA_An_Internet_of_Bio-NanoThings_Application_for_Early_Detection_and_Mitigation_of_Infectious_Diseases'><span>the internet of nano-bio things </span></a></p><p><a href='https://ieeexplore.ieee.org/document/10577229'><span>Human Activity Radar</span></a><span>, </span><a href='https://patents.google.com/patent/KR20080106465A/en?q=(human+activity+radar)&amp;oq=human+activity+radar'><span>patent on HAR </span></a></p><p><a href='https://www.esd.whs.mil/portals/54/documents/dd/issuances/dodd/300009p.pdf'><span>DOD 3000.09</span></a><span>, </span><a href='https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodd/300003p.pdf?ver=2018-10-24-112944-467'><span>DOD 3000.03E</span></a></p><p><span>DNI counter intelligence - </span><a href='https://www.dni.gov/files/NCSC/documents/features/20200205-National_CI_Strategy_2020_2022.pdf'><span>DNI CI ‘20 ‘22</span></a></p><p><a href='https://drjoedispenza.com/'><span>Dr Joe </span></a><a href='https://drjoedispenza.com/'><span>Dispenza</span></a></p><p><a href='https://www.heartmath.org/'><span>Heartmath</span></a><a href='https://www.heartmath.org/'><span> Institute</span></a></p><p><a href='https://en.wikipedia.org/wiki/Biofeedback'><span>Biofeedback</span></a></p><p><a href='https://waterconf.org/wp-content/uploads/2022/04/Transduction-of-DNA-Information-Through-Water-and-Electromagnetic-Waves-Prof-Dr-Montagnier.pdf'><span>Transduction of DNA</span></a></p><p><span> </span></p><p><span> </span></p><p><span> </span></p><p><span> </span></p><p><span> </span></p><p><span> </span></p><p><span> </span></p><p><span> </span></p><p><span> </span></p><p><span> </span></p><p><span> </span></p><p><span> </span></p><p><span> </span></p><p><span> </span></p><p><span>The more you know and research the real state of technology the worse it gets. </span></p><p><a href='https://www.emf-portal.org/en' target='_blank' class='url'>https://www.emf-portal.org/en</a><span> </span></p><p><span>This website has all the health information you are looking for. The problem in not necessarily what is happening to your body by emf alone but the interactions with biosensors, and the under recognized athermal effects of emf such as voltage gated calcium channels. The situation with the coming ‘biodigital convergence’ is intense information. </span></p><p><span>Nanonetworking in the Terahertz Band (and Beyond). What do you think of this?</span>
-<span> </span><a href='https://www.youtube.com/live/wktdC-gJNEE?si=4lam2Cis6QmgYWyz' target='_blank' class='url'>https://www.youtube.com/live/wktdC-gJNEE?si=4lam2Cis6QmgYWyz</a><span> – </span></p><p><span>Just think about his language. “Cells are like computers” Hmm no they are living beings like we are. But I guess those lines are being blurred too. </span></p><p><a href='https://www.smithsonianmag.com/smart-news/scientists-unveiled-the-worlds-first-living-robots-last-year-now-they-can-now-reproduce-180979150/' target='_blank' class='url'>https://www.smithsonianmag.com/smart-news/scientists-unveiled-the-worlds-first-living-robots-last-year-now-they-can-now-reproduce-180979150/</a><span> </span></p><p><span>Yeah xenobots – synthetic biology is wild. </span>
-<span> Graphene is toxic: </span><a href='https://www.aph.gov.au/-/media/Estimates/ca/bud2223/Health/Tabled_doc_6.pdf?la=en&amp;hash=B142FC1571EFB85D24C843816DAEDA706DD9DAAE' target='_blank' class='url'>https://www.aph.gov.au/-/media/Estimates/ca/bud2223/Health/Tabled_doc_6.pdf?la=en&hash=B142FC1571EFB85D24C843816DAEDA706DD9DAAE</a><span> </span></p><p><span>Don’t worry </span><a href='https://nimss.org/projects/view/18797' target='_blank' class='url'>https://nimss.org/projects/view/18797</a><span> </span></p><p><span>USDA is running studies…</span></p><p><span>The rise of cyborgs. So beautiful right?</span></p><p><a href='https://www.tandfonline.com/doi/full/10.1080/14636778.2021.2007064#d1e329' target='_blank' class='url'>https://www.tandfonline.com/doi/full/10.1080/14636778.2021.2007064#d1e329</a><span> </span></p><p><span>It’s not all bad the implications of this technology could actually be incredible. The problem in my view is the mad pace and dangerous deregulation not to mention people being so unaware and undereducated about the true state of what is going on. I’m an electrical engineer but I have been researching these issues for a couple months intensely so I am understanding it better but not as much as I would like. </span></p><p><span> </span></p><p><span> </span></p><p><span> </span></p><p><span>Gradual process my ass. The technology is WAY beyond what they are saying. They are already under your skin just listen to Herari COVID-19 gave permission for surveillance under the skin. CovBAN </span></p><p><a href='https://pubmed.ncbi.nlm.nih.gov/33680703/' target='_blank' class='url'>https://pubmed.ncbi.nlm.nih.gov/33680703/</a><span>  </span></p><p><span>Gee look at this your A$$ is potentially linked up to the blockchain and crypto traders who knows there&#39;s so much corruption I would not doubt it. </span><a href='https://www.sciencedirect.com/science/article/abs/pii/S1383762120300710' target='_blank' class='url'>https://www.sciencedirect.com/science/article/abs/pii/S1383762120300710</a><span> </span></p><p><span>How? </span></p><p><a href='https://www.youtube.com/live/wktdC-gJNEE?si=4lam2Cis6QmgYWyz' target='_blank' class='url'>https://www.youtube.com/live/wktdC-gJNEE?si=4lam2Cis6QmgYWyz</a><span>  </span></p><p><span>Study up it&#39;s ugly</span></p><p><span> </span></p><p><span> </span></p><p><span> </span></p><p><span> </span></p><p><span> </span></p></div></div>
+<div id='write'  class=''><p><span>Biodigital Convergence: An introduction – Links</span></p><p><span>Casey Rodgers, 09/2024</span></p><p><span>Videos</span></p><p><span>·     </span><a href='https://rumble.com/v5gke7l-330156273.html'><span>Nanonetworking in the Terahertz Band (and Beyond): From Nanomaterials to Macrosystems UN-LAB Joseph Jornet 6G</span></a></p><p><span>·     </span><a href='https://www.youtube.com/watch?si=kHzafq7LzcQ19XCl&amp;v=LX6r-t6KwU4&amp;feature=youtu.be'><span>Hacking Humans</span></a></p><p><span>·     </span><a href='https://www.youtube.com/watch?v=QuL3wlodJC8'><span>Harari Transhumanism and eliminating free will</span></a><span> </span></p><p><span>·     </span><a href='https://www.youtube.com/watch?v=gG6WnMb9Fho'><span>Harari how to survive the 21st century</span></a></p><p><span>·     </span><a href='https://www.youtube.com/watch?v=VgdyXh4m9Mc'><strong><span>Wave genome – future science</span></strong></a><span> </span><strong><span>– Must see absolutely mind blowing</span></strong></p><p><span>·     </span><a href='https://www.youtube.com/channel/UCl3Vf8heuOumLuC_toRYGXg'><span>H+ mini-series – very creepy</span></a></p><p><span>·     </span><a href='https://www.youtube.com/watch?v=C5UUc9qM_8A'><span>Giordano – Neuro-weaponry</span></a><span> </span></p><p><span>·     </span><a href='https://youtu.be/bgLC3MUVSLI?si=H4BLbV1OF48WLXR1'><span>Dennis Bushnell of NASA, 2018 speech</span></a></p><p><span>Links to WEF</span></p><p><span>·     </span><a href='https://www.weforum.org/agenda/2023/01/future-of-science-bioconvergence-davos2023/'><span>Does the future of science lie in ‘</span></a><a href='https://www.weforum.org/agenda/2023/01/future-of-science-bioconvergence-davos2023/'><span>bioconvergence</span></a><a href='https://www.weforum.org/agenda/2023/01/future-of-science-bioconvergence-davos2023/'><span>’?</span></a></p><p><span>·     </span><a href='https://intelligence.weforum.org/topics/a1G0X000006DO7RUAW'><span>Mind map of the 4</span></a><a href='https://intelligence.weforum.org/topics/a1G0X000006DO7RUAW'><span>th</span></a><a href='https://intelligence.weforum.org/topics/a1G0X000006DO7RUAW'><span> industrial revolution and more</span></a></p><p><span>·     </span><a href='https://www3.weforum.org/docs/WEF_IoB_briefing_paper_2020.pdf'><span>WEF on the internet of bodies </span></a></p><p><span>·     </span><a href='https://www.weforum.org/agenda/2021/03/scientists-are-developing-a-digital-twin-of-our-earth-to-fight-climate-change/'><span>Building a digital twin of earth to fight climate change</span></a></p><p><span>·     </span><a href='https://www.weforum.org/agenda/2018/04/transhumanism-advances-in-technology-could-already-put-evolution-into-hyperdrive-but-should-they'><span>Transhumanism could put evolution into hyperdrive</span></a></p><p><span>·     </span><a href='https://www.weforum.org/agenda/2019/06/30-years-since-the-mouse-with-a-human-ear-what-has-been-achieved/'><span>30 years since mouse with human ear what has been achieved</span></a></p><p><span>·     </span><a href='https://www.weforum.org/agenda/2020/06/internet-of-bodies-covid19-recovery-governance-health-data/'><span>Internet of Bodies is here</span></a></p><p><span>·     </span><a href='https://www.wired.com/story/opinion-democracies-can-become-digital-dictators/'><span>Democracies can become digital dictators</span></a></p><p><span>·     </span><a href='https://formerfedsgroup.org/opposing-the-wef/'><span>Opposition to what the WEF is saying</span></a></p><p><span>·     </span><a href='https://www.opendemocracy.net/en/oureconomy/conspiracy-theories-aside-there-something-fishy-about-great-reset/'><span>Conspiracy theories aside, there is something fishy about the Great Reset </span></a></p><p><span>·     Just look at the huge number of corporations and organizations partnering with the WEF: </span><a href='https://www.weforum.org/partners/'><span>Our partners</span></a></p><p><a href='https://www.electrical4u.com/electrical-engineering-articles/circuit-theory' target='_blank' class='url'>https://www.electrical4u.com/electrical-engineering-articles/circuit-theory</a></p><p><span>Electromagnetism</span></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/Classical_electromagnetism' target='_blank' class='url'>https://en.wikipedia.org/wiki/Classical_electromagnetism</a><span> </span></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/Dielectric_heating' target='_blank' class='url'>https://en.wikipedia.org/wiki/Dielectric_heating</a><span> </span></p><p><span>Wavelength and skin depth</span></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/Holography'><span>Holography</span></a></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/5D_optical_data_storage'><span>5D optical data storage</span></a></p><p><span>·     </span><a href='•	https:/www.amazon.com/Holographic-Universe-Revolutionary-Theory-Reality/dp/0062014102'><span>Holographic Universe – Michael Talbot</span></a></p><p><span>Thermodynamics and sound</span></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/Thermal_conductance_and_resistance' target='_blank' class='url'>https://en.wikipedia.org/wiki/Thermal_conductance_and_resistance</a><span> </span></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/Thermoacoustics'><span>Thermoacoustics</span></a></p><p><a href='https://en.wikipedia.org/wiki/Nanotechnology'><span>Nanotechnology</span></a></p><p><span>Fluid dynamics</span></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/Microfluidics'><span>Microfluidic</span></a></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/Fluid_dynamics'><span>Fluid dynamics</span></a></p><p><a href='https://en.wikipedia.org/wiki/Epigenetics'><span>Epigenetics</span></a></p><p><a href='https://en.wikipedia.org/wiki/Human_brain'><span>Human Brain</span></a></p><p><a href='https://www.myndlift.com/post/what-are-brainwaves'><span>Brain Waves</span></a></p><p><a href='https://en.wikipedia.org/wiki/Schumann_resonances'><span>Schumann Resonances</span></a></p><p><a href='https://en.wikipedia.org/wiki/Digital_twin'><span>Digital Twin</span></a></p><p><a href='https://www.iec.ch/system/files/2022-12/day_1_seg_12_webinar_biodigital_convergence_v1.0_0.pdf'><span>IEC </span></a><a href='https://www.iec.ch/system/files/2022-12/day_1_seg_12_webinar_biodigital_convergence_v1.0_0.pdf'><span>biodigital</span></a><a href='https://www.iec.ch/system/files/2022-12/day_1_seg_12_webinar_biodigital_convergence_v1.0_0.pdf'><span> convergence slides</span></a></p><p><span>CRISPR and Beyond</span></p><p><span>·     </span><a href='https://phys.org/news/2020-01-rna-effect-dna.html'><span>mRNA can directly </span></a><a href='https://phys.org/news/2020-01-rna-effect-dna.html'><span>effect</span></a><a href='https://phys.org/news/2020-01-rna-effect-dna.html'><span> </span></a><span>DNA</span></p><p><span>·     Monsanto </span><a href='https://responsibletechnology.org/genetically-modified-corn-study-reveals-health-damage-and-cover-up/'><span>90-day studies</span></a></p><p><span>·     </span><a href='https://www.nature.com/articles/nrg.2015.34'><span>Gene drives </span></a></p><p><span>·     </span><a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2682994/'><span>gmo</span></a><a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2682994/'><span> rice with increased vitamin A</span></a></p><p><a href='https://en.wikipedia.org/wiki/Optogenetics'><span>Optogenetics</span></a></p><p><a href='https://en.wikipedia.org/wiki/Sonophoresis'><span>Sonophoresis</span></a><span> , </span><a href='https://en.wikipedia.org/wiki/Electrophoresis'><span>Electrophoresis</span></a></p><p><a href='https://ieeexplore.ieee.org/document/1036025'><span>EM Induced thermos-acoustics</span></a></p><p><a href='https://en.wikipedia.org/wiki/Bioelectronics'><span>Bioelectronics</span></a><span> , </span><a href='https://www.cambridge.org/core/books/handbook-of-bioelectronics/7128838996BEE31406FEE884521E69B8'><span>Handbook of bioelectronics</span></a></p><p><span>IEEE standards and layers of the internet</span></p><p><span>·     </span><a href='https://electricala2z.com/cloud-computing/osi-model-layers-7-layers-osi-model/' target='_blank' class='url'>https://electricala2z.com/cloud-computing/osi-model-layers-7-layers-osi-model/</a><span> </span></p><p><span>·     </span><a href='https://en.wikipedia.org/wiki/Body_area_network' target='_blank' class='url'>https://en.wikipedia.org/wiki/Body_area_network</a><span> </span></p><p><a href='https://en.wikipedia.org/wiki/Electroencephalography'><span>EEG</span></a><span>, </span><a href='https://en.wikipedia.org/wiki/Magnetoencephalography'><span>MEG</span></a><span>, </span><a href='https://en.wikipedia.org/wiki/Electrocardiography'><span>EKG</span></a><span>, </span><a href='https://en.wikipedia.org/wiki/Functional_magnetic_resonance_imaging'><span>fMRI</span></a><span>, </span><a href='https://hackernoon.com/openwater-a-revolutionary-open-source-wearable-mri-and-bci-device'><span>fNIR</span></a></p><p><a href='https://en.wikipedia.org/wiki/Technocracy'><span>Technocracy</span></a><span>, </span><a href='https://en.wikipedia.org/wiki/The_Venus_Project'><span>the Venus Project</span></a></p><p><span>Sentient Analysis and feedback </span><a href='https://en.wikipedia.org/wiki/Government_by_algorithm'><span>algorithmic governance</span></a></p><p><a href='https://en.wikipedia.org/wiki/ECHELON'><span>ECHELON</span></a><span> and </span><a href='https://en.wikipedia.org/wiki/Global_Information_Grid'><span>Global Information Grid </span></a></p><p><a href='https://en.wikipedia.org/wiki/Smart_city'><span>Smart City</span></a></p><p><a href='https://www.dhs.gov/science-and-technology/biosurveillance'><span>Biosurveillance</span></a><span> , </span><a href='https://www.researchgate.net/publication/343250221_PANACEA_An_Internet_of_Bio-NanoThings_Application_for_Early_Detection_and_Mitigation_of_Infectious_Diseases'><span>the internet of nano-bio things </span></a></p><p><a href='https://ieeexplore.ieee.org/document/10577229'><span>Human Activity Radar</span></a><span>, </span><a href='https://patents.google.com/patent/KR20080106465A/en?q=(human+activity+radar)&amp;oq=human+activity+radar'><span>patent on HAR </span></a></p><p><a href='https://www.esd.whs.mil/portals/54/documents/dd/issuances/dodd/300009p.pdf'><span>DOD 3000.09</span></a><span>, </span><a href='https://www.esd.whs.mil/Portals/54/Documents/DD/issuances/dodd/300003p.pdf?ver=2018-10-24-112944-467'><span>DOD 3000.03E</span></a></p><p><span>DNI counter intelligence - </span><a href='https://www.dni.gov/files/NCSC/documents/features/20200205-National_CI_Strategy_2020_2022.pdf'><span>DNI CI ‘20 ‘22</span></a></p><p><a href='https://drjoedispenza.com/'><span>Dr Joe </span></a><a href='https://drjoedispenza.com/'><span>Dispenza</span></a></p><p><a href='https://www.heartmath.org/'><span>Heartmath</span></a><a href='https://www.heartmath.org/'><span> Institute</span></a></p><p><a href='https://en.wikipedia.org/wiki/Biofeedback'><span>Biofeedback</span></a></p><p><a href='https://waterconf.org/wp-content/uploads/2022/04/Transduction-of-DNA-Information-Through-Water-and-Electromagnetic-Waves-Prof-Dr-Montagnier.pdf'><span>Transduction of DNA</span></a></p><p>&nbsp;</p></div></div>
 </body>
 </html>
